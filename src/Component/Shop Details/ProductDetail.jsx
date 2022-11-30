@@ -176,7 +176,7 @@ function ProductDetail(props) {
                                         Cám ơn bạn một lần nữa
                                     </p>
                                 </div>
-                                <div className="tab-pane fade" id="tab-pane-2">
+                                <div className="tab-pane fade show active" id="tab-pane-2">
                                     <h4 class="mb-3">Additional Information</h4>
                                     <p>
                                         Eos no lorem eirmod diam diam, eos elitr et gubergren diam sea.
@@ -300,7 +300,7 @@ function ProductDetail(props) {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="tab-pane fade" id="tab-pane-3">
+                                <div className="tab-pane fade show active" id="tab-pane-3">
                                     <div className="row">
                                         <div className="col-md-6">
                                             <h4 className="mb-4">1 nhận xét "Áo sơ mi sành điệu đầy màu sắc"</h4>

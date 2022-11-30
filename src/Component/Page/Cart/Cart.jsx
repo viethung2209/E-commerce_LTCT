@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Card(props) {
+function Cart(props) {
     return (
         <div className="container-fluid pt-5">
             <div className="row px-xl-5">
@@ -194,4 +194,4 @@ function Card(props) {
     );
 }
 
-export default Card;
+export default Cart;

@@ -9,12 +9,12 @@ function Shop(props) {
             <div className="row px-xl-5">
                 <div className="col-lg-3 col-md-12">
                     <div className="border-bottom mb-4 pb-4">
-                        <h5 className="font-weight-semi-bold mb-4">Filter by price</h5>
+                        <h5 className="font-weight-semi-bold mb-4">Lọc theo giá</h5>
                         <form>
                             <div
                                 className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                                 <input type="checkbox" className="custom-control-input" checked id="price-all"/>
-                                    <label className="custom-control-label" htmlFor="price-all">All Price</label>
+                                    <label className="custom-control-label" htmlFor="price-all">Tất cả giá</label>
                                     <span className="badge border font-weight-normal">1000</span>
                             </div>
                             <div
@@ -51,36 +51,36 @@ function Shop(props) {
                     </div>
 
                     <div className="border-bottom mb-4 pb-4">
-                        <h5 className="font-weight-semi-bold mb-4">Filter by color</h5>
+                        <h5 className="font-weight-semi-bold mb-4">Lọc theo màu sắc</h5>
                         <form>
                             <div
                                 className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                                 <input type="checkbox" className="custom-control-input" checked id="color-all"/>
-                                    <label className="custom-control-label" htmlFor="price-all">All Color</label>
+                                    <label className="custom-control-label" htmlFor="price-all">Tất cả các màu</label>
                                     <span className="badge border font-weight-normal">1000</span>
                             </div>
                             <div
                                 className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                                 <input type="checkbox" className="custom-control-input" id="color-1"/>
-                                    <label className="custom-control-label" htmlFor="color-1">Black</label>
+                                    <label className="custom-control-label" htmlFor="color-1">Đen</label>
                                     <span className="badge border font-weight-normal">150</span>
                             </div>
                             <div
                                 className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                                 <input type="checkbox" className="custom-control-input" id="color-2"/>
-                                    <label className="custom-control-label" htmlFor="color-2">White</label>
+                                    <label className="custom-control-label" htmlFor="color-2">Trắng</label>
                                     <span className="badge border font-weight-normal">295</span>
                             </div>
                             <div
                                 className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                                 <input type="checkbox" className="custom-control-input" id="color-3"/>
-                                    <label className="custom-control-label" htmlFor="color-3">Red</label>
+                                    <label className="custom-control-label" htmlFor="color-3">Đỏ</label>
                                     <span className="badge border font-weight-normal">246</span>
                             </div>
                             <div
                                 className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                                 <input type="checkbox" className="custom-control-input" id="color-4"/>
-                                    <label className="custom-control-label" htmlFor="color-4">Blue</label>
+                                    <label className="custom-control-label" htmlFor="color-4">Xanh da trời</label>
                                     <span className="badge border font-weight-normal">145</span>
                             </div>
                             <div
@@ -93,7 +93,7 @@ function Shop(props) {
                     </div>
 
                     <div className="mb-5">
-                        <h5 className="font-weight-semi-bold mb-4">Filter by size</h5>
+                        <h5 className="font-weight-semi-bold mb-4">Lọc theo kích cỡ</h5>
                         <form>
                             <div
                                 className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
@@ -142,7 +142,7 @@ function Shop(props) {
                             <div className="d-flex align-items-center justify-content-between mb-4">
                                 <form action="">
                                     <div className="input-group">
-                                        <input type="text" className="form-control" placeholder="Search by name"/>
+                                        <input type="text" className="form-control" placeholder="Tìm kiếm theo tên"/>
                                             <div className="input-group-append">
                                         <span className="input-group-text bg-transparent text-primary">
                                             <i className="fa fa-search"></i>
@@ -161,9 +161,9 @@ function Shop(props) {
                                     {
                                         isShow && <>
                                             <div className="dropdown-menu dropdown-menu-right" aria-labelledby="triggerId">
-                                                <a className="dropdown-item" href="#">Latest</a>
-                                                <a className="dropdown-item" href="#">Popularity</a>
-                                                <a className="dropdown-item" href="#">Best Rating</a>
+                                                <a className="dropdown-item" href="#">Mới nhất</a>
+                                                <a className="dropdown-item" href="#">Phổ biến</a>
+                                                <a className="dropdown-item" href="#">Theo đánh giá</a>
                                             </div>
                                         </>
                                     }
@@ -177,7 +177,7 @@ function Shop(props) {
                                     <img className="img-fluid w-100" src={require('../../img/product-1.jpg')} alt=""/>
                                 </div>
                                 <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                    <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                                    <h6 className="text-truncate mb-3">Áo sơ mi sành điệu đầy màu sắc</h6>
                                     <div className="d-flex justify-content-center">
                                         <h6>$123.00</h6>
                                         <h6 className="text-muted ml-2">
@@ -187,9 +187,9 @@ function Shop(props) {
                                 </div>
                                 <div className="card-footer d-flex justify-content-between bg-light border">
                                     <a href="" className="btn btn-sm text-dark p-0"><i
-                                        className="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                                        className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
                                     <a href="" className="btn btn-sm text-dark p-0"><i
-                                        className="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                                        className="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ hàng</a>
                                 </div>
                             </div>
                         </div>
@@ -200,7 +200,7 @@ function Shop(props) {
                                     <img className="img-fluid w-100" src={require('../../img/product-2.jpg')} alt=""/>
                                 </div>
                                 <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                    <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                                    <h6 className="text-truncate mb-3">Áo sơ mi sành điệu đầy màu sắc</h6>
                                     <div className="d-flex justify-content-center">
                                         <h6>$123.00</h6>
                                         <h6 className="text-muted ml-2">
@@ -210,9 +210,9 @@ function Shop(props) {
                                 </div>
                                 <div className="card-footer d-flex justify-content-between bg-light border">
                                     <a href="" className="btn btn-sm text-dark p-0"><i
-                                        className="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                                        className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
                                     <a href="" className="btn btn-sm text-dark p-0"><i
-                                        className="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                                        className="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ hàng</a>
                                 </div>
                             </div>
                         </div>
@@ -223,7 +223,7 @@ function Shop(props) {
                                     <img className="img-fluid w-100" src={require('../../img/product-3.jpg')} alt=""/>
                                 </div>
                                 <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                    <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                                    <h6 className="text-truncate mb-3">Áo sơ mi sành điệu đầy màu sắc</h6>
                                     <div className="d-flex justify-content-center">
                                         <h6>$123.00</h6>
                                         <h6 className="text-muted ml-2">
@@ -233,9 +233,9 @@ function Shop(props) {
                                 </div>
                                 <div className="card-footer d-flex justify-content-between bg-light border">
                                     <a href="" className="btn btn-sm text-dark p-0"><i
-                                        className="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                                        className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
                                     <a href="" className="btn btn-sm text-dark p-0"><i
-                                        className="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                                        className="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ hàng</a>
                                 </div>
                             </div>
                         </div>
@@ -246,7 +246,7 @@ function Shop(props) {
                                     <img className="img-fluid w-100" src={require('../../img/product-4.jpg')} alt=""/>
                                 </div>
                                 <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                    <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                                    <h6 className="text-truncate mb-3">Áo sơ mi sành điệu đầy màu sắc</h6>
                                     <div className="d-flex justify-content-center">
                                         <h6>$123.00</h6>
                                         <h6 className="text-muted ml-2">
@@ -256,9 +256,9 @@ function Shop(props) {
                                 </div>
                                 <div className="card-footer d-flex justify-content-between bg-light border">
                                     <a href="" className="btn btn-sm text-dark p-0"><i
-                                        className="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                                        className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
                                     <a href="" className="btn btn-sm text-dark p-0"><i
-                                        className="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                                        className="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ hàng</a>
                                 </div>
                             </div>
                         </div>
@@ -269,7 +269,7 @@ function Shop(props) {
                                     <img className="img-fluid w-100" src={require('../../img/product-5.jpg')} alt=""/>
                                 </div>
                                 <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                    <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                                    <h6 className="text-truncate mb-3">Áo sơ mi sành điệu đầy màu sắc</h6>
                                     <div className="d-flex justify-content-center">
                                         <h6>$123.00</h6>
                                         <h6 className="text-muted ml-2">
@@ -279,9 +279,9 @@ function Shop(props) {
                                 </div>
                                 <div className="card-footer d-flex justify-content-between bg-light border">
                                     <a href="" className="btn btn-sm text-dark p-0"><i
-                                        className="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                                        className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
                                     <a href="" className="btn btn-sm text-dark p-0"><i
-                                        className="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                                        className="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ hàng</a>
                                 </div>
                             </div>
                         </div>
@@ -292,7 +292,7 @@ function Shop(props) {
                                     <img className="img-fluid w-100" src={require('../../img/product-6.jpg')} alt=""/>
                                 </div>
                                 <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                    <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                                    <h6 className="text-truncate mb-3">Áo sơ mi sành điệu đầy màu sắc</h6>
                                     <div className="d-flex justify-content-center">
                                         <h6>$123.00</h6>
                                         <h6 className="text-muted ml-2">
@@ -302,9 +302,9 @@ function Shop(props) {
                                 </div>
                                 <div className="card-footer d-flex justify-content-between bg-light border">
                                     <a href="" className="btn btn-sm text-dark p-0"><i
-                                        className="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                                        className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
                                     <a href="" className="btn btn-sm text-dark p-0"><i
-                                        className="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                                        className="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ hàng</a>
                                 </div>
                             </div>
                         </div>
@@ -315,7 +315,7 @@ function Shop(props) {
                                     <img className="img-fluid w-100" src={require('../../img/product-7.jpg')} alt=""/>
                                 </div>
                                 <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                    <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                                    <h6 className="text-truncate mb-3">Áo sơ mi sành điệu đầy màu sắc</h6>
                                     <div className="d-flex justify-content-center">
                                         <h6>$123.00</h6>
                                         <h6 className="text-muted ml-2">
@@ -325,9 +325,9 @@ function Shop(props) {
                                 </div>
                                 <div className="card-footer d-flex justify-content-between bg-light border">
                                     <a href="" className="btn btn-sm text-dark p-0"><i
-                                        className="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                                        className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
                                     <a href="" className="btn btn-sm text-dark p-0"><i
-                                        className="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                                        className="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ hàng</a>
                                 </div>
                             </div>
                         </div>
@@ -338,7 +338,7 @@ function Shop(props) {
                                     <img className="img-fluid w-100" src={require('../../img/product-8.jpg')} alt=""/>
                                 </div>
                                 <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                    <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                                    <h6 className="text-truncate mb-3">Áo sơ mi sành điệu đầy màu sắc</h6>
                                     <div className="d-flex justify-content-center">
                                         <h6>$123.00</h6>
                                         <h6 className="text-muted ml-2">
@@ -348,9 +348,9 @@ function Shop(props) {
                                 </div>
                                 <div className="card-footer d-flex justify-content-between bg-light border">
                                     <a href="" className="btn btn-sm text-dark p-0"><i
-                                        className="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                                        className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
                                     <a href="" className="btn btn-sm text-dark p-0"><i
-                                        className="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                                        className="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ hàng</a>
                                 </div>
                             </div>
                         </div>
@@ -361,7 +361,7 @@ function Shop(props) {
                                     <img className="img-fluid w-100" src={require('../../img/product-1.jpg')} alt=""/>
                                 </div>
                                 <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                    <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                                    <h6 className="text-truncate mb-3">Áo sơ mi sành điệu đầy màu sắc</h6>
                                     <div className="d-flex justify-content-center">
                                         <h6>$123.00</h6>
                                         <h6 className="text-muted ml-2">
@@ -371,9 +371,9 @@ function Shop(props) {
                                 </div>
                                 <div className="card-footer d-flex justify-content-between bg-light border">
                                     <a href="" className="btn btn-sm text-dark p-0"><i
-                                        className="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                                        className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
                                     <a href="" className="btn btn-sm text-dark p-0"><i
-                                        className="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                                        className="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ hàng</a>
                                 </div>
                             </div>
                         </div>

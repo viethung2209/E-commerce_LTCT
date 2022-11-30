@@ -9,9 +9,9 @@ const TopBar = () => {
                         <div className="d-inline-flex align-items-center">
                             <a className="text-dark" href="src/Component/Dashboard/TopBar">FAQs</a>
                             <span className="text-muted px-2">|</span>
-                            <a className="text-dark" href="src/Component/Dashboard/TopBar">Help</a>
+                            <a className="text-dark" href="src/Component/Dashboard/TopBar">Hướng dẫn</a>
                             <span className="text-muted px-2">|</span>
-                            <a className="text-dark" href="src/Component/Dashboard/TopBar">Support</a>
+                            <a className="text-dark" href="src/Component/Dashboard/TopBar">Hỗ trợ</a>
                         </div>
                     </div>
                     <div className="col-lg-6 text-center text-lg-right">
@@ -44,7 +44,7 @@ const TopBar = () => {
                     <div className="col-lg-6 col-6 text-left">
                         <form action="src/Component/Dashboard/TopBar">
                             <div className="input-group">
-                                <input type="text" className="form-control" placeholder="Search for products"/>
+                                <input type="text" className="form-control" placeholder="Tìm kiếm sản phẩm"/>
                                     <div className="input-group-append">
                             <span className="input-group-text bg-transparent text-primary">
                                 <i className="fa fa-search"></i>

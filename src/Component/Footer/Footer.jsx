@@ -12,71 +12,67 @@ const Footer = () => {
                         </h1>
                     </a>
                     <p>
-                        Dolore erat dolor sit lorem vero amet. Sed sit lorem magna, ipsum no sit erat lorem et magna
-                        ipsum dolore amet erat.
+                    MUA SẮM VÀ BÁN HÀNG ONLINE ĐƠN GIẢN, NHANH CHÓNG VÀ AN TOÀN
                     </p>
                     <p className="mb-2">
                         <i className="fa fa-map-marker-alt text-primary mr-3"></i>
-                        123 Street, New York, USA
+                        1 phường Bách Khoa, TP. Hà Nội, Việt Nam
                     </p>
                     <p className="mb-2">
                         <i className="fa fa-envelope text-primary mr-3">
-                        </i>info@example.com</p>
+                        </i>info@eshopper.com</p>
                     <p className="mb-0">
                         <i className="fa fa-phone-alt text-primary mr-3">
-                        </i>+012 345 67890</p>
+                        </i>(+84)8 123 456</p>
                 </div>
                 <div className="col-lg-8 col-md-12">
                     <div className="row">
                         <div className="col-md-4 mb-5">
-                            <h5 className="font-weight-bold text-dark mb-4">Quick Links</h5>
+                            <h5 className="font-weight-bold text-dark mb-4">Truy cập nhanh</h5>
                             <div className="d-flex flex-column justify-content-start">
                                 <a className="text-dark mb-2" href="src/Component/Footer/Footer"><i
-                                    className="fa fa-angle-right mr-2"></i>Home</a>
+                                    className="fa fa-angle-right mr-2"></i>Truy cập nhanh</a>
                                 <a className="text-dark mb-2" href="src/Component/Footer/Footer"><i
-                                    className="fa fa-angle-right mr-2"></i>Our Shop</a>
+                                    className="fa fa-angle-right mr-2"></i>Cửa hàng của chúng tôi</a>
                                 <a className="text-dark mb-2" href="src/Component/Footer/Footer"><i
-                                    className="fa fa-angle-right mr-2"></i>Shop Detail</a>
+                                    className="fa fa-angle-right mr-2"></i>Chi tiết cửa hàng</a>
                                 <a className="text-dark mb-2" href="src/Component/Footer/Footer"><i
-                                    className="fa fa-angle-right mr-2"></i>Shopping Cart</a>
+                                    className="fa fa-angle-right mr-2"></i>Giỏ hàng</a>
                                 <a className="text-dark mb-2" href="src/Component/Footer/Footer"><i
-                                    className="fa fa-angle-right mr-2"></i>Checkout</a>
+                                    className="fa fa-angle-right mr-2"></i>Thanh toán</a>
                                 <a className="text-dark" href="src/Component/Footer/Footer">
-                                    <i className="fa fa-angle-right mr-2"></i>Contact Us
+                                    <i className="fa fa-angle-right mr-2"></i>Liên hệ với chúng tôi
                                 </a>
                             </div>
                         </div>
                         <div className="col-md-4 mb-5">
-                            <h5 className="font-weight-bold text-dark mb-4">Quick Links</h5>
+                            <h5 className="font-weight-bold text-dark mb-4">Chăm sóc khách hàng</h5>
                             <div className="d-flex flex-column justify-content-start">
                                 <a className="text-dark mb-2" href="src/Component/Footer/Footer"><i
-                                    className="fa fa-angle-right mr-2"></i>Home</a>
+                                    className="fa fa-angle-right mr-2"></i>Trung tâm trợ giúp</a>
                                 <a className="text-dark mb-2" href="src/Component/Footer/Footer"><i
-                                    className="fa fa-angle-right mr-2"></i>Our Shop</a>
+                                    className="fa fa-angle-right mr-2"></i>Hướng dẫn mua hàng</a>
                                 <a className="text-dark mb-2" href="src/Component/Footer/Footer"><i
-                                    className="fa fa-angle-right mr-2"></i>Shop Detail</a>
+                                    className="fa fa-angle-right mr-2"></i>Trả hàng & hoàn tiền</a>
                                 <a className="text-dark mb-2" href="src/Component/Footer/Footer"><i
-                                    className="fa fa-angle-right mr-2"></i>Shopping Cart</a>
+                                    className="fa fa-angle-right mr-2"></i>Chăm sóc khách hàng</a>
                                 <a className="text-dark mb-2" href="src/Component/Footer/Footer"><i
-                                    className="fa fa-angle-right mr-2"></i>Checkout</a>
-                                <a className="text-dark" href="src/Component/Footer/Footer"><i className="fa fa-angle-right mr-2"></i>Contact
-                                    Us</a>
+                                    className="fa fa-angle-right mr-2"></i>Chính sách đổi trả</a>
                             </div>
                         </div>
                         <div className="col-md-4 mb-5">
-                            <h5 className="font-weight-bold text-dark mb-4">Newsletter</h5>
+                            <h5 className="font-weight-bold text-dark mb-4">Tin vắn</h5>
                             <form action="src/Component/Footer/Footer">
                                 <div className="form-group">
-                                    <input type="text" className="form-control border-0 py-4" placeholder="Your Name"
+                                    <input type="text" className="form-control border-0 py-4" placeholder="Tên"
                                            required="required"/>
                                 </div>
                                 <div className="form-group">
-                                    <input type="email" className="form-control border-0 py-4" placeholder="Your Email"
+                                    <input type="email" className="form-control border-0 py-4" placeholder="Email của bạn"
                                            required="required"/>
                                 </div>
                                 <div>
-                                    <button className="btn btn-primary btn-block border-0 py-3" type="submit">Subscribe
-                                        Now
+                                    <button className="btn btn-primary btn-block border-0 py-3" type="submit">Đăng ký ngay
                                     </button>
                                 </div>
                             </form>
@@ -89,14 +85,12 @@ const Footer = () => {
                     <p className="mb-md-0 text-center text-md-left text-dark">
                         &copy;
                         <a className="text-dark font-weight-semi-bold" href="src/Component/Footer/Footer#">
-                            Your Site Name
+                            E Shopper
                         </a>
-                        . All Rights Reserved. Designed by
+                        {/* . All Rights Reserved. Designed by
                         <a class="text-dark font-weight-semi-bold" href="https://htmlcodex.com">
                             HTML Codex
-                        </a><br/>
-                        Distributed By
-                        <a href="https://themewagon.com">ThemeWagon</a>
+                        </a><br/> */}
                     </p>
                 </div>
                 <div className="col-md-6 px-xl-0 text-center text-md-right">

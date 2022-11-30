@@ -28,30 +28,30 @@ const Navbar = (props) => {
                             <div className={showNavbar ? "collapse navbar-collapse justify-content-between show" : "collapse navbar-collapse justify-content-between"} id="navbarCollapse">
                                 <div className="navbar-nav mr-auto py-0">
                                     
-                                    <NavLink to="/" className="nav-item nav-link active">Home</NavLink>
-                                    <NavLink to="/shop" className="nav-item nav-link">Shop</NavLink>
-                                    <NavLink to="/shop-detail" className="nav-item nav-link">Shop Detail</NavLink>
+                                    <NavLink to="/" className="nav-item nav-link active">Trang chủ</NavLink>
+                                    <NavLink to="/shop" className="nav-item nav-link">Cửa hàng</NavLink>
+                                    <NavLink to="/shop-detail" className="nav-item nav-link">Chi tiết cửa hàng</NavLink>
                                     
                                     <div className="nav-item dropdown">
                                         <Link className="nav-link dropdown-toggle"
-                                           onClick={() => setShow(!show)}>Pages</Link>
+                                           onClick={() => setShow(!show)}>Đơn hàng</Link>
                                         {show && <>
                                         <div className="dropdown-menu rounded-0 m-0" onClick={() => setShow(!show)}>
                                             <Link to="pages/shopping-card"
                                                 className="dropdown-item"
-                                            >Shopping Cart</Link>
+                                            >Giỏ hàng</Link>
                                             <Link to="pages/checkout"
                                                 className="dropdown-item"
-                                            >Checkout</Link>
+                                            >Thanh toán</Link>
                                         </div>
                                         </>}
                                     </div>
                                     
-                                    <Link to="contact" className="nav-item nav-link">Contact</Link>
+                                    <Link to="contact" className="nav-item nav-link">Liên hệ</Link>
                                 </div>
                                 <div className="navbar-nav ml-auto py-0">
-                                    <Link to="login" className="nav-item nav-link">Login</Link>
-                                    <Link to="register" className="nav-item nav-link">Register</Link>
+                                    <Link to="login" className="nav-item nav-link">Đăng nhập</Link>
+                                    <Link to="register" className="nav-item nav-link">Đăng ký</Link>
                                 </div>
                             </div>
                         </nav>

@@ -5,7 +5,7 @@ function Contact(props) {
         <div className="container-fluid pt-5">
             <div className="text-center mb-4">
                 <h2 className="section-title px-5">
-                    <span className="px-2">Contact For Any Queries</span>
+                    <span className="px-2">HÃY LIÊN HỆ VỚI CHÚNG TÔI</span>
                 </h2>
             </div>
             <div className="row px-xl-5">
@@ -17,7 +17,7 @@ function Contact(props) {
                                 <input type="text"
                                        className="form-control"
                                        id="name"
-                                       placeholder="Your Name"
+                                       placeholder="Tên"
                                        required="required"
                                        data-validation-required-message="Please enter your name"/>
                                 <p className="help-block text-danger"></p>
@@ -26,7 +26,7 @@ function Contact(props) {
                                 <input type="email"
                                        className="form-control"
                                        id="email"
-                                       placeholder="Your Email"
+                                       placeholder="Email"
                                        required="required"
                                        data-validation-required-message="Please enter your email"/>
                                 <p className="help-block text-danger"></p>
@@ -34,7 +34,7 @@ function Contact(props) {
                             <div className="control-group">
                                 <input type="text"
                                        className="form-control"
-                                       id="subject" placeholder="Subject"
+                                       id="subject" placeholder="Tiêu đề"
                                        required="required"
                                        data-validation-required-message="Please enter a subject"/>
                                 <p className="help-block text-danger"></p>
@@ -42,7 +42,7 @@ function Contact(props) {
                             <div className="control-group">
                             <textarea className="form-control"
                                       rows="6" id="message"
-                                      placeholder="Message"
+                                      placeholder="Tin nhắn"
                                       required="required"
                                       data-validation-required-message="Please enter your message">
                             </textarea>
@@ -50,45 +50,44 @@ function Contact(props) {
                             </div>
                             <div>
                                 <button className="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">
-                                    Send Message
+                                    Gửi tin nhắn
                                 </button>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div className="col-lg-5 mb-5">
-                    <h5 className="font-weight-semi-bold mb-3">Get In Touch</h5>
+                    <h5 className="font-weight-semi-bold mb-3">Liên hệ</h5>
                     <p>
-                        Justo sed diam ut sed amet duo amet lorem amet stet sea ipsum, sed duo amet et. Est elitr
-                        dolor elitr erat sit sit. Dolor diam et erat clita ipsum justo sed.
+                        Nếu bạn có bất cứ thắc mắc gì về sản phẩm của chúng tôi, hoặc muốn nhận các thông tin sản phẩm mới nhất, hãy liên hệ với chúng tôi qua những địa chỉ sau
                     </p>
                     <div className="d-flex flex-column mb-3">
-                        <h5 className="font-weight-semi-bold mb-3">Store 1</h5>
+                        <h5 className="font-weight-semi-bold mb-3">E Shopper Hà Nội</h5>
                         <p className="mb-2"><i className="fa fa-map-marker-alt text-primary mr-3">
-                            </i>123 Street, New York, USA
+                            </i>số 1, phường Bách Khoa, quận Hai Bà Trưng, TP. Hà Nội, Việt Nam
                         </p>
                         <p className="mb-2">
                             <i className="fa fa-envelope text-primary mr-3"></i>
-                            info@example.com
+                            eshoppperhanoi@eshopper.com
                         </p>
                         <p className="mb-2">
                             <i className="fa fa-phone-alt text-primary mr-3"></i>
-                            +012 345 67890
+                            (+84)8 123 456
                         </p>
                     </div>
                     <div className="d-flex flex-column">
-                        <h5 className="font-weight-semi-bold mb-3">Store 2</h5>
+                        <h5 className="font-weight-semi-bold mb-3">E Shopper Dubai</h5>
                         <p className="mb-2">
                             <i className="fa fa-map-marker-alt text-primary mr-3"></i>
-                            123 Street, New York, USA
+                            The Dubai Mall, Dubai, UAE
                         </p>
                         <p className="mb-2">
                             <i className="fa fa-envelope text-primary mr-3"></i>
-                            info@example.com
+                            eshopperdubai@eshopper.com
                         </p>
                         <p className="mb-0">
                             <i className="fa fa-phone-alt text-primary mr-3"></i>
-                            +012 345 67890
+                            (+941)9 999 9999
                         </p>
                     </div>
                 </div>

@@ -18,7 +18,7 @@ function Menu(props) {
                    style={{height: "65px", marginTop: "-1px", padding: "0 30px"}}
                    onClick={onClickShowMenu}
                 >
-                    <h6 className="m-0">Categories</h6>
+                    <h6 className="m-0">Danh mục</h6>
                     {
                         isShow? 
                         <i className="fa fa-angle-up text-dark"></i>
@@ -36,7 +36,7 @@ function Menu(props) {
                             <div className="navbar-nav w-100 overflow-hidden" style={{height: "410px"}}>
                                 <div className="nav-item dropdown">
                                     <div className="nav-link" data-toggle="dropdown" onClick={() => setIsShowDresses(!isShowDresses)}>
-                                        Dresses 
+                                        Thời trang
                                     {
                                         isShowDresses?
                                         <i className="fa fa-angle-up float-right mt-1"></i>
@@ -48,22 +48,22 @@ function Menu(props) {
                                         isShowDresses && <>
                                             <div
                                                 className="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                                <a href="src/Component/Dashboard/Navbar" className="dropdown-item">Men's Dresses</a>
-                                                <a href="src/Component/Dashboard/Navbar" className="dropdown-item">Women's Dresses</a>
-                                                <a href="src/Component/Dashboard/Navbar" className="dropdown-item">Baby's Dresses</a>
+                                                <a href="src/Component/Dashboard/Navbar" className="dropdown-item">Thời trang nam</a>
+                                                <a href="src/Component/Dashboard/Navbar" className="dropdown-item">Thời trang nữ</a>
+                                                <a href="src/Component/Dashboard/Navbar" className="dropdown-item">Thời trang trẻ em</a>
                                             </div>
                                         </>
                                     }
                                 </div>
-                                <a href="src/Component/Dashboard/Navbar" className="nav-item nav-link">Shirts</a>
-                                <a href="src/Component/Dashboard/Navbar" className="nav-item nav-link">Jeans</a>
-                                <a href="src/Component/Dashboard/Navbar" className="nav-item nav-link">Swimwear</a>
-                                <a href="src/Component/Dashboard/Navbar" className="nav-item nav-link">Sleepwear</a>
-                                <a href="src/Component/Dashboard/Navbar" className="nav-item nav-link">Sportswear</a>
-                                <a href="src/Component/Dashboard/Navbar" className="nav-item nav-link">Jumpsuits</a>
-                                <a href="src/Component/Dashboard/Navbar" className="nav-item nav-link">Blazers</a>
-                                <a href="src/Component/Dashboard/Navbar" className="nav-item nav-link">Jackets</a>
-                                <a href="src/Component/Dashboard/Navbar" className="nav-item nav-link">Shoes</a>
+                                <a href="src/Component/Dashboard/Navbar" className="nav-item nav-link">Áo phông</a>
+                                <a href="src/Component/Dashboard/Navbar" className="nav-item nav-link">Quần jeans</a>
+                                <a href="src/Component/Dashboard/Navbar" className="nav-item nav-link">Đồ bơi</a>
+                                <a href="src/Component/Dashboard/Navbar" className="nav-item nav-link">Đồ ngủ</a>
+                                <a href="src/Component/Dashboard/Navbar" className="nav-item nav-link">Quần áo thể thao</a>
+                                <a href="src/Component/Dashboard/Navbar" className="nav-item nav-link">Áo liền quần</a>
+                                <a href="src/Component/Dashboard/Navbar" className="nav-item nav-link">Áo cộc tay</a>
+                                <a href="src/Component/Dashboard/Navbar" className="nav-item nav-link">Áo khoác</a>
+                                <a href="src/Component/Dashboard/Navbar" className="nav-item nav-link">Giày</a>
                             </div>
                         </nav>
                     </>

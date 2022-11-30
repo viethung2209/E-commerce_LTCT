@@ -7,7 +7,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./Component/Home/Home";
 import ShopDetail from "./Component/Shop Details/ShopDetail";
 import Checkout from "./Component/Page/Checkout/Checkout";
-import Card from "./Component/Page/Card/Card";
+import Cart from "./Component/Page/Cart/Cart";
 import Contact from "./Component/Contact/Contact";
 import Shop from "./Component/Shop/Shop";
 
@@ -19,7 +19,7 @@ root.render(
               <Route path="/" element={<Home/>}/>
               <Route path="shop-detail" element={<ShopDetail/>}/>
               <Route path="pages/checkout" element={<Checkout/>}/>
-              <Route path="pages/shopping-card" element={<Card/>}/>
+              <Route path="pages/shopping-card" element={<Cart/>}/>
               <Route path="contact" element={<Contact/>}/>
               <Route path="shop" element={<Shop/>}/>
           </Route>

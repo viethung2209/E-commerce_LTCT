@@ -2,7 +2,7 @@ const JustArrivedProducts = (props) => {
     return (
         <div className="container-fluid pt-5">
             <div className="text-center mb-4">
-                <h2 className="section-title px-5"><span className="px-2">Trandy Products</span></h2>
+                <h2 className="section-title px-5"><span className="px-2">SẢN PHẨM MỚI NHẤT</span></h2>
             </div>
             <div className="row px-xl-5 pb-3">
                 <div className="col-lg-3 col-md-6 col-sm-12 pb-1">
@@ -12,7 +12,7 @@ const JustArrivedProducts = (props) => {
                             <img className="img-fluid w-100" src={require('../../img/product-1.jpg')} alt=""/>
                         </div>
                         <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                            <h6 className="text-truncate mb-3">Áo sơ mi sành điệu đầy màu sắc</h6>
                             <div className="d-flex justify-content-center">
                                 <h6>$123.00</h6>
                                 <h6 className="text-muted ml-2">
@@ -22,9 +22,9 @@ const JustArrivedProducts = (props) => {
                         </div>
                         <div className="card-footer d-flex justify-content-between bg-light border">
                             <a href="src/Component/Home/JustArrivedProducts" className="btn btn-sm text-dark p-0"><i
-                                className="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                                className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
                             <a href="src/Component/Home/JustArrivedProducts" className="btn btn-sm text-dark p-0"><i
-                                className="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                                className="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                 </div>
@@ -35,7 +35,7 @@ const JustArrivedProducts = (props) => {
                             <img className="img-fluid w-100" src={require('../../img/product-2.jpg')} alt=""/>
                         </div>
                         <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                            <h6 className="text-truncate mb-3">Áo sơ mi sành điệu đầy màu sắc</h6>
                             <div className="d-flex justify-content-center">
                                 <h6>$123.00</h6>
                                 <h6 className="text-muted ml-2">
@@ -45,9 +45,9 @@ const JustArrivedProducts = (props) => {
                         </div>
                         <div className="card-footer d-flex justify-content-between bg-light border">
                             <a href="src/Component/Home/JustArrivedProducts" className="btn btn-sm text-dark p-0"><i
-                                className="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                                className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
                             <a href="src/Component/Home/JustArrivedProducts" className="btn btn-sm text-dark p-0"><i
-                                className="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                                className="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@ const JustArrivedProducts = (props) => {
                             <img className="img-fluid w-100" src={require('../../img/product-3.jpg')} alt=""/>
                         </div>
                         <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                            <h6 className="text-truncate mb-3">Áo sơ mi sành điệu đầy màu sắc</h6>
                             <div className="d-flex justify-content-center">
                                 <h6>$123.00</h6>
                                 <h6 className="text-muted ml-2">
@@ -68,9 +68,9 @@ const JustArrivedProducts = (props) => {
                         </div>
                         <div className="card-footer d-flex justify-content-between bg-light border">
                             <a href="src/Component/Home/JustArrivedProducts" className="btn btn-sm text-dark p-0"><i
-                                className="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                                className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
                             <a href="src/Component/Home/JustArrivedProducts" className="btn btn-sm text-dark p-0"><i
-                                className="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                                className="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@ const JustArrivedProducts = (props) => {
                             <img className="img-fluid w-100" src={require('../../img/product-4.jpg')} alt=""/>
                         </div>
                         <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                            <h6 className="text-truncate mb-3">Áo sơ mi sành điệu đầy màu sắc</h6>
                             <div className="d-flex justify-content-center">
                                 <h6>$123.00</h6>
                                 <h6 className="text-muted ml-2">
@@ -91,9 +91,9 @@ const JustArrivedProducts = (props) => {
                         </div>
                         <div className="card-footer d-flex justify-content-between bg-light border">
                             <a href="src/Component/Home/JustArrivedProducts" className="btn btn-sm text-dark p-0"><i
-                                className="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                                className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
                             <a href="src/Component/Home/JustArrivedProducts" className="btn btn-sm text-dark p-0"><i
-                                className="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                                className="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,7 @@ const JustArrivedProducts = (props) => {
                             <img className="img-fluid w-100" src={require('../../img/product-5.jpg')} alt=""/>
                         </div>
                         <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                            <h6 className="text-truncate mb-3">Áo sơ mi sành điệu đầy màu sắc</h6>
                             <div className="d-flex justify-content-center">
                                 <h6>$123.00</h6>
                                 <h6 className="text-muted ml-2">
@@ -114,9 +114,9 @@ const JustArrivedProducts = (props) => {
                         </div>
                         <div className="card-footer d-flex justify-content-between bg-light border">
                             <a href="src/Component/Home/JustArrivedProducts" className="btn btn-sm text-dark p-0"><i
-                                className="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                                className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
                             <a href="src/Component/Home/JustArrivedProducts" className="btn btn-sm text-dark p-0"><i
-                                className="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                                className="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                 </div>
@@ -127,7 +127,7 @@ const JustArrivedProducts = (props) => {
                             <img className="img-fluid w-100" src={require('../../img/product-6.jpg')} alt=""/>
                         </div>
                         <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                            <h6 className="text-truncate mb-3">Áo sơ mi sành điệu đầy màu sắc</h6>
                             <div className="d-flex justify-content-center">
                                 <h6>$123.00</h6>
                                 <h6 className="text-muted ml-2">
@@ -137,9 +137,9 @@ const JustArrivedProducts = (props) => {
                         </div>
                         <div className="card-footer d-flex justify-content-between bg-light border">
                             <a href="src/Component/Home/JustArrivedProducts" className="btn btn-sm text-dark p-0"><i
-                                className="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                                className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
                             <a href="src/Component/Home/JustArrivedProducts" className="btn btn-sm text-dark p-0"><i
-                                className="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                                className="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                 </div>
@@ -151,7 +151,7 @@ const JustArrivedProducts = (props) => {
                         </div>
                         <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
                             <h6 className="text-truncate mb-3">
-                                Colorful Stylish Shirt
+                                Áo sơ mi sành điệu đầy màu sắc
                             </h6>
                             <div className="d-flex justify-content-center">
                                 <h6>$123.00</h6>
@@ -163,11 +163,11 @@ const JustArrivedProducts = (props) => {
                         <div className="card-footer d-flex justify-content-between bg-light border">
                             <a href="src/Component/Home/JustArrivedProducts" className="btn btn-sm text-dark p-0">
                                 <i className="fas fa-eye text-primary mr-1"></i>
-                                View Detail
+                                Xem chi tiết
                             </a>
                             <a href="src/Component/Home/JustArrivedProducts" className="btn btn-sm text-dark p-0">
                                 <i className="fas fa-shopping-cart text-primary mr-1"></i>
-                                Add To Cart
+                                Thêm vào giỏ hàng
                             </a>
                         </div>
                     </div>
@@ -179,7 +179,7 @@ const JustArrivedProducts = (props) => {
                             <img className="img-fluid w-100" src={require('../../img/product-8.jpg')} alt=""/>
                         </div>
                         <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                            <h6 className="text-truncate mb-3">Áo sơ mi sành điệu đầy màu sắc</h6>
                             <div className="d-flex justify-content-center">
                                 <h6>$123.00</h6>
                                 <h6 className="text-muted ml-2">
@@ -190,11 +190,11 @@ const JustArrivedProducts = (props) => {
                         <div className="card-footer d-flex justify-content-between bg-light border">
                             <a href="src/Component/Home/JustArrivedProducts" className="btn btn-sm text-dark p-0">
                                 <i className="fas fa-eye text-primary mr-1"></i>
-                                View Detail
+                                Xem chi tiết
                             </a>
                             <a href="src/Component/Home/JustArrivedProducts" className="btn btn-sm text-dark p-0">
                                 <i className="fas fa-shopping-cart text-primary mr-1"></i>
-                                Add To Cart
+                                Thêm vào giỏ hàng
                             </a>
                         </div>
                     </div>

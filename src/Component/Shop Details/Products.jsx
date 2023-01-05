@@ -38,9 +38,9 @@ function Products(props) {
                                         </div>
                                     </div>
                                     <div className="card-footer d-flex justify-content-between bg-light border">
-                                        <a href="" className="btn btn-sm text-dark p-0"><i
+                                        <a href="/#" className="btn btn-sm text-dark p-0"><i
                                             className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
-                                        <a href="" className="btn btn-sm text-dark p-0"><i
+                                        <a href="/#" className="btn btn-sm text-dark p-0"><i
                                             className="fas fa-shopping-cart text-primary mr-1"></i>Thêm
                                             vào giỏ hàng</a>
                                     </div>
@@ -64,9 +64,9 @@ function Products(props) {
                                         </div>
                                     </div>
                                     <div className="card-footer d-flex justify-content-between bg-light border">
-                                        <a href="" className="btn btn-sm text-dark p-0"><i
+                                        <a href="/#" className="btn btn-sm text-dark p-0"><i
                                             className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
-                                        <a href="" className="btn btn-sm text-dark p-0"><i
+                                        <a href="/#" className="btn btn-sm text-dark p-0"><i
                                             className="fas fa-shopping-cart text-primary mr-1"></i>Thêm
                                             vào giỏ hàng</a>
                                     </div>
@@ -90,9 +90,9 @@ function Products(props) {
                                         </div>
                                     </div>
                                     <div className="card-footer d-flex justify-content-between bg-light border">
-                                        <a href="" className="btn btn-sm text-dark p-0"><i
+                                        <a href="/#" className="btn btn-sm text-dark p-0"><i
                                             className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
-                                        <a href="" className="btn btn-sm text-dark p-0"><i
+                                        <a href="/#" className="btn btn-sm text-dark p-0"><i
                                             className="fas fa-shopping-cart text-primary mr-1"></i>Thêm
                                             vào giỏ hàng</a>
                                     </div>
@@ -116,9 +116,9 @@ function Products(props) {
                                         </div>
                                     </div>
                                     <div className="card-footer d-flex justify-content-between bg-light border">
-                                        <a href="" className="btn btn-sm text-dark p-0"><i
+                                        <a href="/#" className="btn btn-sm text-dark p-0"><i
                                             className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
-                                        <a href="" className="btn btn-sm text-dark p-0"><i
+                                        <a href="/#" className="btn btn-sm text-dark p-0"><i
                                             className="fas fa-shopping-cart text-primary mr-1"></i>Thêm
                                             vào giỏ hàng</a>
                                     </div>
@@ -142,9 +142,9 @@ function Products(props) {
                                         </div>
                                     </div>
                                     <div className="card-footer d-flex justify-content-between bg-light border">
-                                        <a href="" className="btn btn-sm text-dark p-0"><i
+                                        <a href="/#" className="btn btn-sm text-dark p-0"><i
                                             className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
-                                        <a href="" className="btn btn-sm text-dark p-0"><i
+                                        <a href="/#" className="btn btn-sm text-dark p-0"><i
                                             className="fas fa-shopping-cart text-primary mr-1"></i>Thêm
                                             vào giỏ hàng</a>
                                     </div>

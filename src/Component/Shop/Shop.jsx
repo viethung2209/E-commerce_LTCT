@@ -161,9 +161,9 @@ function Shop(props) {
                                     {
                                         isShow && <>
                                             <div className="dropdown-menu dropdown-menu-right" aria-labelledby="triggerId">
-                                                <a className="dropdown-item" href="#">Mới nhất</a>
-                                                <a className="dropdown-item" href="#">Phổ biến</a>
-                                                <a className="dropdown-item" href="#">Theo đánh giá</a>
+                                                <a className="dropdown-item" href="/#">Mới nhất</a>
+                                                <a className="dropdown-item" href="/#">Phổ biến</a>
+                                                <a className="dropdown-item" href="/#">Theo đánh giá</a>
                                             </div>
                                         </>
                                     }
@@ -381,16 +381,16 @@ function Shop(props) {
                             <nav aria-label="Page navigation">
                                 <ul className="pagination justify-content-center mb-3">
                                     <li className="page-item disabled">
-                                        <a className="page-link" href="#" aria-label="Previous">
+                                        <a className="page-link" href="/#" aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
                                             <span className="sr-only">Previous</span>
                                         </a>
                                     </li>
-                                    <li className="page-item active"><a className="page-link" href="#">1</a></li>
-                                    <li className="page-item"><a className="page-link" href="#">2</a></li>
-                                    <li className="page-item"><a className="page-link" href="#">3</a></li>
+                                    <li className="page-item active"><a className="page-link" href="/#">1</a></li>
+                                    <li className="page-item"><a className="page-link" href="/#">2</a></li>
+                                    <li className="page-item"><a className="page-link" href="/#">3</a></li>
                                     <li className="page-item">
-                                        <a className="page-link" href="#" aria-label="Next">
+                                        <a className="page-link" href="/#" aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
                                             <span className="sr-only">Next</span>
                                         </a>

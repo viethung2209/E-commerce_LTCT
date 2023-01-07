@@ -2,8 +2,10 @@ import React from 'react';
 
 function Contact(props) {
     return (
-        <div className="container-fluid pt-5">
-            <div className="text-center mb-4">
+        <div
+        // className="container-fluid pt-5"
+        >
+            {/* <div className="text-center mb-4">
                 <h2 className="section-title px-5">
                     <span className="px-2">HÃY LIÊN HỆ VỚI CHÚNG TÔI</span>
                 </h2>
@@ -91,8 +93,11 @@ function Contact(props) {
                         </p>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div> */}
+            <iframe src="https://chat-real-time-production-1e8e.up.railway.app/ " class="chatbox" scrolling="no">
+
+            </iframe>
+        </div >
     );
 }
 

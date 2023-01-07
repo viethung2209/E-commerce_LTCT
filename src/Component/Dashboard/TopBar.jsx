@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const TopBar = () => {
     return (
@@ -42,16 +42,16 @@ const TopBar = () => {
                         </Link>
                     </div>
                     <div className="col-lg-6 col-6 text-left">
-                        <form action="src/Component/Dashboard/TopBar">
+                        {/* <form action="src/Component/Dashboard/TopBar">
                             <div className="input-group">
-                                <input type="text" className="form-control" placeholder="Tìm kiếm sản phẩm"/>
-                                    <div className="input-group-append">
-                            <span className="input-group-text bg-transparent text-primary">
-                                <i className="fa fa-search"></i>
-                            </span>
-                                    </div>
+                                <input type="text" className="form-control" placeholder="Tìm kiếm sản phẩm" />
+                                <div className="input-group-append">
+                                    <span className="input-group-text bg-transparent text-primary">
+                                        <i className="fa fa-search"></i>
+                                    </span>
+                                </div>
                             </div>
-                        </form>
+                        </form> */}
                     </div>
                     <div className="col-lg-3 col-6 text-right">
                         <a href="src/Component/Dashboard/TopBar" className="btn border">
@@ -67,7 +67,7 @@ const TopBar = () => {
                 </div>
             </div>
         </>
-)
+    )
 }
 
-export default  TopBar;
+export default TopBar;

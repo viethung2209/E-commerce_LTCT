@@ -1,30 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './index.scss';
 import App from './Component/App/App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Home from "./Component/Home/Home";
-import ShopDetail from "./Component/Shop Details/ShopDetail";
-import Checkout from "./Component/Page/Checkout/Checkout";
-import Cart from "./Component/Page/Cart/Cart";
-import Contact from "./Component/Contact/Contact";
-import Shop from "./Component/Shop/Shop";
+import { Provider } from 'react-redux';
+import store from "./Redux/store"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-      <Routes>
-          <Route path="/" element={<App/>}>
-              <Route path="/" element={<Home/>}/>
-              <Route path="shop-detail" element={<ShopDetail/>}/>
-              <Route path="pages/checkout" element={<Checkout/>}/>
-              <Route path="pages/shopping-card" element={<Cart/>}/>
-              <Route path="contact" element={<Contact/>}/>
-              <Route path="shop" element={<Shop/>}/>
-          </Route>
-      </Routes>
-  </BrowserRouter>
+    <React.StrictMode>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

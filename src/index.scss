@@ -1,3 +1,12 @@
+@import "CSS/_login.scss";
+@import "CSS/_signup.scss";
+@import "CSS/loading";
+@import "CSS/navbar";
+
+:root {
+  --primary-color: rgb(209, 156, 151);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +20,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+

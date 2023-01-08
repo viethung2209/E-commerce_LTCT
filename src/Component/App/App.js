@@ -18,11 +18,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 const App = () => {
   return (
     <BrowserRouter>
-    
+
       <TopBar />
       <Navbar />
       <Outlet />
-      <Footer />
       <BackToTop />
       <Login />
       <SignUp />
@@ -35,6 +34,8 @@ const App = () => {
         <Route path="contact" element={<Contact />} />
         <Route path="shop" element={<Shop />} />
       </Routes>
+
+      <Footer />
     </BrowserRouter>
   )
 }

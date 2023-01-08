@@ -29,11 +29,11 @@ export const loginUser = async (dataLoginObj, dispatch, swal) => {
         })
         .catch((err) => {
             console.log(err);
-            dispatch(loginError("Email or password invalid. Please try again!"));
+            dispatch(loginError("Email hoặc mật khẩu không đúng! Xin vui lòng nhập lại!"));
             swal({
                 icon: "error",
-                title: "Failed!",
-                text: "Email or password invalid. Please try again!",
+                title: "Lỗi!",
+                text: "Email hoặc mật khẩu không đúng! Xin vui lòng nhập lại!",
             })
         });
 }
@@ -43,22 +43,22 @@ export const signUpUser = async (dataSignUpObj, dispatch, swal) => {
     axios.post(`${baseURL}/user/user`, dataSignUpObj)
         .then((response) => {
             console.log(response);
-            dispatch(signUpSuccess("Sign up successfully!"));
+            dispatch(signUpSuccess("Đăng ký thành công!"));
             swal({
                 icon: "success",
-                title: "Sign up!",
-                text: "Sign up successfully!",
+                title: "ĐĂNG KÝ!",
+                text: "Đăng ký tài khoản thành công!",
             }).then(() => {
                 dispatch(hiddenSignUp());
             })
         })
         .catch(err => {
             console.log(err);
-            dispatch(signUpError("Sign up failed!"));
+            dispatch(signUpError("Đăng ký thất bại!"));
             swal({
                 icon: "error",
-                title: "Failed!",
-                text: "Sign up failed!",
+                title: "LỖI!",
+                text: "Đăng ký thất bại!",
             }).then(() => {
                 dispatch(hiddenSignUp());
             })

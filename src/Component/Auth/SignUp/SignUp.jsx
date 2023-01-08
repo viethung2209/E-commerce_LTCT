@@ -48,16 +48,16 @@ const SignUp = () => {
                     <form className="signup-form" onSubmit={formik.handleSubmit}>
                         <span id="close-icon" onClick={() => dispatch(hiddenSignUp())}><GrClose /></span>
                         <div className="signup-header">
-                            <h2>Sign up</h2>
+                            <h2>Đăng ký</h2>
                         </div>
                         <div className="signup-body">
                             <div className="input-container">
-                                <label className="label-signup">Username</label>
+                                <label className="label-signup">Họ tên</label>
                                 <input
                                     type="text"
                                     name="name"
                                     className="input-signup"
-                                    placeholder="Enter your username"
+                                    placeholder="Họ tên của bạn"
                                     value={formik.values.name}
                                     onChange={formik.handleChange}
                                 />
@@ -69,31 +69,31 @@ const SignUp = () => {
                                     type="email"
                                     name="email"
                                     className="input-signup"
-                                    placeholder="Enter your email"
+                                    placeholder="Email của bạn"
                                     value={formik.values.email}
                                     onChange={formik.handleChange}
                                 />
                                 {formik.errors.email && <span className='validate-icon'><RiErrorWarningFill /></span>}
                             </div>
                             <div className="input-container">
-                                <label className="label-signup">Password</label>
+                                <label className="label-signup">Mật khẩu</label>
                                 <input
                                     type={showPassword ? "text" : "password"}
                                     name="password"
                                     className="input-signup"
-                                    placeholder="Enter your password"
+                                    placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
                                     value={formik.values.password}
                                     onChange={formik.handleChange}
                                 />
                                 {formik.errors.password && <span className='validate-icon'><RiErrorWarningFill /></span>}
                             </div>
                             <div className="input-container">
-                                <label className="label-signup">Confirm Password</label>
+                                <label className="label-signup">Xác nhận mật khẩu</label>
                                 <input
                                     type={showPassword ? "text" : "password"}
                                     name="confirmPassword"
                                     className="input-signup"
-                                    placeholder="Confirm password"
+                                    placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
                                     value={formik.values.confirmPassword}
                                     onChange={formik.handleChange}
                                 />
@@ -106,19 +106,19 @@ const SignUp = () => {
                                     checked={showPassword}
                                     onChange={toggleShowPassword}
                                 />
-                                <label htmlFor="show-pass">Show Password</label>
+                                <label htmlFor="show-pass">Hiển thị mật khẩu</label>
                             </div>
                         </div>
                         <div className="signup-footer">
-                            <button id="btn-signup" type='submit'>Sign Up</button>
-                            <span className='txt1'> ⭐ Already have an account?
+                            <button id="btn-signup" type='submit'>Đăng ký nhanh</button>
+                            <span className='txt1'> ⭐ Bạn đã có tài khoản?
                                 <Link
                                     className='txt2'
                                     onClick={() => {
                                         dispatch(hiddenSignUp());
                                         dispatch(showLogin());
                                     }}
-                                > Sign in</Link>
+                                > Đăng nhập ngay!</Link>
                             </span>
                         </div>
                     </form>

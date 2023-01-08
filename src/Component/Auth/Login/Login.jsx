@@ -44,7 +44,7 @@ const Login = () => {
                     <form className="login-form" onSubmit={formik.handleSubmit}>
                         <span id="close-icon" onClick={() => dispatch(hiddenLogin())}><GrClose /></span>
                         <div className="login-header">
-                            <h2>Login</h2>
+                            <h2>Đăng nhập</h2>
                             <img src={logoUser} alt="" />
                         </div>
                         <div className="login-body">
@@ -54,18 +54,18 @@ const Login = () => {
                                     type="email"
                                     name="email"
                                     className="input-login"
-                                    placeholder="Enter your email"
+                                    placeholder="Email của bạn"
                                     value={formik.values.email}
                                     onChange={formik.handleChange}
                                 />
                             </div>
                             <div className="input-container">
-                                <label className="label-login">Password</label>
+                                <label className="label-login">Mật khẩu</label>
                                 <input
                                     type={showPassword ? "text" : "password"}
                                     name="password"
                                     className="input-login"
-                                    placeholder="Enter your password"
+                                    placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
                                     value={formik.values.password}
                                     onChange={formik.handleChange}
                                 />
@@ -86,13 +86,13 @@ const Login = () => {
                             <button
                                 id="btn-login" type="submit"
                             >
-                                Login
+                                Đăng nhập
                             </button>
-                            <span>Forgot <Link to="">Username/Password</Link> ?</span>
-                            <span>Don't have an account? <Link onClick={() => {
+                            <span>Quên <Link to="">tài khoản/mật khẩu?</Link> ?</span>
+                            <span>Bạn chưa có tài khoản? <Link onClick={() => {
                                 dispatch(hiddenLogin());
                                 dispatch(showSignUp());
-                            }}>Sign up</Link></span>
+                            }}>Đăng ký ngay</Link></span>
                         </div>
                     </form>
                 </div>

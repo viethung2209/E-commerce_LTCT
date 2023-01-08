@@ -1,11 +1,43 @@
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import Menu from "./Menu";
+import { showLogin, showSignUp } from "../../Redux/auth.slice";
+import { useDispatch, useSelector } from "react-redux";
+import DropdownNavbar from "./DropdownNavbar";
+import logoUser from "../../img/user-128.png";
 
 const Navbar = (props) => {
 
     const [show, setShow] = useState(false);
     const [showNavbar, setShowNavbar] = useState(false);
+    const [height, setHeight] = useState(0);
+    const dropdownRef = useRef();
+
+
+    const dispatch = useDispatch();
+    const currentUser = useSelector(state => state.auth.login.currentUser);
+    const token = useSelector(state => state.auth.login.accessToken);
+
+    console.log(currentUser);
+    console.log(token);
+
+    function closeDropdown() {
+        setHeight(0);
+    }
+
+    //--------------------------------UseEffect to close dropdown-----------------
+    useEffect(() => {
+        /**
+         * If the dropdown menu is open and the user clicks outside of the dropdown, close the dropdown menu.
+         */
+        let handler = (e) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+                closeDropdown()
+            }
+        }
+        document.addEventListener("mousedown", handler, height === "auto")
+        return document.removeEventListener("mousedown", handler, height === 0);
+    })
 
     return (
         <>
@@ -49,10 +81,32 @@ const Navbar = (props) => {
 
                                     <Link to="contact" className="nav-item nav-link">Liên hệ</Link>
                                 </div>
-                                <div className="navbar-nav ml-auto py-0">
-                                    <Link to="login" className="nav-item nav-link">Đăng nhập</Link>
-                                    <Link to="register" className="nav-item nav-link">Đăng ký</Link>
-                                </div>
+                                {
+                                    token ?
+                                        <div className="nav-links-main" ref={dropdownRef}>
+                                            <Link style={{textDecoration:"none", cursor:"default"}}>{currentUser?.name}</Link>
+                                            <img
+                                                src={logoUser}
+                                                className='user-pic'
+                                                alt="imageUser"
+                                                onClick={() => setHeight(height === 0 ? "auto" : 0)}
+                                            />
+                                            <DropdownNavbar height={height} closeDropdown={closeDropdown} />
+                                        </div>
+                                        :
+                                        <div className="navbar-nav ml-auto py-0">
+                                            <Link
+                                                className="nav-item nav-link"
+                                                onClick={() => dispatch(showLogin())}
+                                            >
+                                                Đăng nhập</Link>
+                                            <Link
+                                                className="nav-item nav-link"
+                                                onClick={() => dispatch(showSignUp())}
+                                            >
+                                                Đăng ký</Link>
+                                        </div>
+                                }
                             </div>
                         </nav>
                     </div>

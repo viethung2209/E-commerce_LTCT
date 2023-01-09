@@ -7,11 +7,11 @@ const TopBar = () => {
                 <div className="row bg-secondary py-2 px-xl-5">
                     <div className="col-lg-6 d-none d-lg-block">
                         <div className="d-inline-flex align-items-center">
-                            <a className="text-dark" href="src/Component/Dashboard/TopBar">FAQs</a>
+                            <a className="text-dark" href="https://sp04-faq-user-page.netlify.app/" target="_blank" rel="noreferrer" >FAQs</a>
                             <span className="text-muted px-2">|</span>
-                            <a className="text-dark" href="src/Component/Dashboard/TopBar">Hướng dẫn</a>
+                            <a className="text-dark" href="https://sp04-faq-user-page.netlify.app/" target="_blank" rel="noreferrer">Hướng dẫn</a>
                             <span className="text-muted px-2">|</span>
-                            <a className="text-dark" href="src/Component/Dashboard/TopBar">Hỗ trợ</a>
+                            <a className="text-dark" href="https://sp04-faq-user-page.netlify.app/" target="_blank" rel="noreferrer">Hỗ trợ</a>
                         </div>
                     </div>
                     <div className="col-lg-6 text-center text-lg-right">

@@ -62,7 +62,7 @@ const Navbar = (props) => {
 
                                     <NavLink to="/" className="nav-item nav-link active">Trang chủ</NavLink>
                                     <NavLink to="/shop" className="nav-item nav-link">Cửa hàng</NavLink>
-                                    <NavLink to="/shop-detail" className="nav-item nav-link">Chi tiết cửa hàng</NavLink>
+                                    {/* <NavLink to="/shop-detail" className="nav-item nav-link">Chi tiết cửa hàng</NavLink> */}
 
                                     <div className="nav-item dropdown">
                                         <Link className="nav-link dropdown-toggle"
@@ -84,7 +84,7 @@ const Navbar = (props) => {
                                 {
                                     token ?
                                         <div className="nav-links-main" ref={dropdownRef}>
-                                            <Link style={{textDecoration:"none", cursor:"default"}}>{currentUser?.name}</Link>
+                                            <Link style={{textDecoration:"none", cursor:"default"}} id='text-name'>{currentUser?.name}</Link>
                                             <img
                                                 src={logoUser}
                                                 className='user-pic'

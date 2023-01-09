@@ -6,7 +6,7 @@ const Subscribe = (props) => {
                     <div className="text-center mb-2 pb-2">
                         <h2 className="section-title px-5 mb-3"><span className="bg-secondary px-2">Luôn luôn bắt kịp xu hướng</span>
                         </h2>
-                        <p>Luôn luôn đem đến cho bạn những thông tin mới nhất về những sản phẩm đang thịnh h trên thị trường</p>
+                        <p>Luôn luôn đem đến cho bạn những thông tin mới nhất về những sản phẩm đang thịnh hành trên thị trường</p>
                     </div>
                     <form action="src/Component/Home/Subscribe">
                         <div className="input-group">

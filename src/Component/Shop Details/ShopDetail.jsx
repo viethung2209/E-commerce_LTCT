@@ -1,6 +1,4 @@
 import React from 'react';
-import Products from "./Products";
-import ProductDetail from "./ProductDetail";
 
 function ShopDetail(props) {
     return (
@@ -18,8 +16,6 @@ function ShopDetail(props) {
                     </div>
                 </div>
             </p>
-            <ProductDetail/>
-            <Products/>
         </div>
     );
 }

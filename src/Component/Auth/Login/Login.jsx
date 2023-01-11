@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { GrClose } from "react-icons/gr"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from 'react-redux';
 import { hiddenLogin, showSignUp } from '../../../Redux/auth.slice';
@@ -17,6 +17,7 @@ const Login = () => {
     const dispatch = useDispatch();
     const isShow = useSelector(state => state.auth.login.isShow);
     const isLoading = useSelector(state => state.auth.login.isLoading);
+    const navigate = useNavigate();
 
     const handleShowPassword = () => {
         setShowPassword(!showPassword);
@@ -42,7 +43,9 @@ const Login = () => {
             isShow && (
                 <div className="login-container">
                     <form className="login-form" onSubmit={formik.handleSubmit}>
-                        <span id="close-icon" onClick={() => dispatch(hiddenLogin())}><GrClose /></span>
+                        <span id="close-icon" onClick={() => {
+                             dispatch(hiddenLogin());
+                        }}><GrClose /></span>
                         <div className="login-header">
                             <h2>Đăng nhập</h2>
                             <img src={logoUser} alt="" />

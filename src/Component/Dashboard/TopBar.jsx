@@ -54,15 +54,15 @@ const TopBar = () => {
                         </form> */}
                     </div>
                     <div className="col-lg-3 col-6 text-right">
-                        <a href="src/Component/Dashboard/TopBar" className="btn border">
+                        <Link className="btn border">
                             <i className="fas fa-heart text-primary"></i>
                             <span className="badge">0</span>
-                        </a>
+                        </Link>
                         {" "}
-                        <a href="src/Component/Dashboard/TopBar" className="btn border">
+                        <Link to="/pages/shopping-card" className="btn border">
                             <i className="fas fa-shopping-cart text-primary"></i>
                             <span className="badge">0</span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

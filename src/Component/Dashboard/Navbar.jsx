@@ -79,7 +79,8 @@ const Navbar = (props) => {
                                         </>}
                                     </div>
 
-                                    <Link to="contact" className="nav-item nav-link">Liên hệ</Link>
+                                    <NavLink to="contact" className="nav-item nav-link">Liên hệ</NavLink>
+                                    <NavLink to="order" className="nav-item nav-link">Đơn mua</NavLink>
                                 </div>
                                 {
                                     token ?

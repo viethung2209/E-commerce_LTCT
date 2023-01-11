@@ -16,6 +16,7 @@ import Shop from "../Shop/Shop";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import { getListProduct } from '../../Api/product.api';
 import ProductDetail from '../Shop Details/ProductDetail';
+import OrderHistory from '../Page/Order/OrderHistory';
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
         <Route path="pages/shopping-card" element={<Cart />} />
         <Route path="contact" element={<Contact />} />
         <Route path="shop" element={<Shop />} />
+        <Route path="order" element={<OrderHistory />}/>
       </Routes>
 
       <Footer />

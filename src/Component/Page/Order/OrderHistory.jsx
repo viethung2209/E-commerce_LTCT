@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-function Cart(props) {
+function OrderHistory(props) {
 
     const currentUser = useSelector(state => state.auth.login.currentUser);
 
@@ -10,7 +10,7 @@ function Cart(props) {
     return (
         <div className="card-container">
             <iframe className='card-frame'
-            src={`https://hssh18121.github.io/Cart-frontend/${currentUser.id}`} 
+            src={`http://103.179.173.95:8081/listOrderByUser/${currentUser.id}`} 
             frameborder="0"
             title='card'
             ></iframe>
@@ -18,4 +18,4 @@ function Cart(props) {
     );
 }
 
-export default Cart;
+export default OrderHistory;

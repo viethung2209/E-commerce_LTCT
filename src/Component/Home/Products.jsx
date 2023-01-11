@@ -8,8 +8,8 @@ const Products = ({ productList }) => {
         <h2 className="section-title px-5"><span className="px-2">SẢN PHẨM NỔI BẬT</span></h2>
       </div>
       <div className="row px-xl-5 pb-3">
-        {productList.map(product => (
-          <div className="col-lg-3 col-md-6 col-sm-12 pb-1">
+        {productList.map((product, index) => (
+          <div className="col-lg-3 col-md-6 col-sm-12 pb-1" key={index}>
             <div className="card product-item border-0 mb-4">
               <div
                 className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">

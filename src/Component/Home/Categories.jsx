@@ -1,3 +1,5 @@
+import React from 'react'
+
 const Categories = ({ categoryList }) => {
     return (
         <div className="container-fluid pt-5">

@@ -1,20 +1,34 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { showLogin } from '../../../Redux/auth.slice';
 
 function OrderHistory(props) {
 
     const currentUser = useSelector(state => state.auth.login.currentUser);
+    const dispatch = useDispatch()
 
-    console.log('User: ', currentUser);
+    if(!currentUser) {
+        dispatch(showLogin());
+    }
 
     return (
-        <div className="card-container">
-            <iframe className='card-frame'
-            src={`http://103.179.173.95:8081/listOrderByUser/${currentUser.id}`} 
-            frameborder="0"
-            title='card'
-            ></iframe>
-        </div>
+        <>{
+            currentUser ?
+            <div className="card-container">
+                <iframe className='card-frame'
+                src={`http://103.179.173.95:8081/listOrderByUser/${currentUser?.id}`} 
+                frameborder="0"
+                title='card'
+                ></iframe>
+            </div>
+            :
+            <div style={{
+                width: "100%", textAlign: "center"
+            }}
+            >
+                Hãy <b><i><u style={{color:'#C5837C', cursor: "pointer"}} onClick={() => {dispatch(showLogin())}}>đăng nhập</u></i></b> để xem đơn mua!
+            </div>
+        }</>
     );
 }
 

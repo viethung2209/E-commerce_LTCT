@@ -12,14 +12,12 @@ const Navbar = (props) => {
     const [showNavbar, setShowNavbar] = useState(false);
     const [height, setHeight] = useState(0);
     const dropdownRef = useRef();
+    const orderRef = useRef();
 
 
     const dispatch = useDispatch();
     const currentUser = useSelector(state => state.auth.login.currentUser);
     const token = useSelector(state => state.auth.login.accessToken);
-
-    console.log(currentUser);
-    console.log(token);
 
     function closeDropdown() {
         setHeight(0);
@@ -37,6 +35,17 @@ const Navbar = (props) => {
         }
         document.addEventListener("mousedown", handler, height === "auto")
         return document.removeEventListener("mousedown", handler, height === 0);
+    })
+
+    //--------------------------------UseEffect to close order dropdown menu-----------------
+    useEffect(() => {
+        let handler = (e) => {
+            if (orderRef.current && !orderRef.current.contains(e.target)) {
+                setShow(false);
+            }
+        }
+        document.addEventListener("mousedown", handler)
+        return document.removeEventListener("mousedown", handler);
     })
 
     return (
@@ -60,11 +69,11 @@ const Navbar = (props) => {
                             <div className={showNavbar ? "collapse navbar-collapse justify-content-between show" : "collapse navbar-collapse justify-content-between"} id="navbarCollapse">
                                 <div className="navbar-nav mr-auto py-0">
 
-                                    <NavLink to="/" className="nav-item nav-link active">Trang chủ</NavLink>
+                                    <NavLink to="/" className="nav-item nav-link">Trang chủ</NavLink>
                                     <NavLink to="/shop" className="nav-item nav-link">Cửa hàng</NavLink>
                                     {/* <NavLink to="/shop-detail" className="nav-item nav-link">Chi tiết cửa hàng</NavLink> */}
 
-                                    <div className="nav-item dropdown">
+                                    <div className="nav-item dropdown" ref={orderRef}>
                                         <Link className="nav-link dropdown-toggle"
                                             onClick={() => setShow(!show)}>Đơn hàng</Link>
                                         {show && <>

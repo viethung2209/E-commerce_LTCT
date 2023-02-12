@@ -50,7 +50,6 @@ function Shop(props) {
     useEffect(() => {
         listProduct();
     }, [])
-
     return (
         <div className="container-fluid pt-5">
             <div className="row px-xl-5">
@@ -222,7 +221,7 @@ function Shop(props) {
                                 <div className="card product-item border-0 mb-4">
                                     <div
                                         className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                        {/* <img className="img-fluid w-100" src={product.sub_products[0].image_url} alt="Anh san pham" /> */}
+                                        <img className="img-fluid w-100" src={product.sub_products.length !== 0? product.sub_products[0].image_url : null} alt="Anh san pham" />
                                     </div>
                                     <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
                                         <h6 className="text-truncate mb-3">{product.name}</h6>

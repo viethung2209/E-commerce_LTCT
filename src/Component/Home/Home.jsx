@@ -11,11 +11,15 @@ import Categories from "./Categories";
 import Products from "./Products";
 import { getListProduct } from "../../Api/product.api";
 import { getAllCategories } from "../../Api/category.api";
+import Advertisement from "./Advertisement";
+import { getAllAdvertisement } from "../../Api/advertisement";
+
 
 function Home(props) {
 
   const [productList, setProductList] = useState([]);
   const [categoryList, setCategoryList] = useState([]);
+  const [adsList, setAdsList] = useState([]);
 
   const getProducts = () => {
     getListProduct()
@@ -38,14 +42,27 @@ function Home(props) {
       console.log(err);
     })
   }
+  
+  const getAds = () => {
+    
+    getAllAdvertisement()
+    .then( res => {
+      setAdsList(res.data);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }
 
   useEffect(() => {
     getProducts();
     getCategories();
+    getAds();
   }, [])
   
   return (
     <>
+      <Advertisement adsList={adsList}/>
       <Featured />
       <Categories categoryList={categoryList}/>
       <Products productList={productList}/>

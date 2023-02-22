@@ -8,19 +8,22 @@ const Products = ({ productList }) => {
   const currentUser = useSelector(state => state.auth.login.currentUser);
   const dispatch = useDispatch();
 
-  async function addToCart(productId) {
+  async function addToCart(productId, quantity) {
     if (!currentUser) {
       dispatch(showLogin());
     }
 
     console.log(productId)
+    console.log(quantity)
     let request = {
       user_id: currentUser.id,
-      // product_id: productId,
-      // quantity: 1,
+      product_id: 10,
+      quantity: (quantity ? quantity : 1)
     }
-    await addCart(JSON.stringify(request), productId);
+    await addCart(JSON.stringify(request));
     console.log(productId)
+    console.log("REQ");
+    console.log(request)
     console.log(currentUser.id)
     console.log("Add to Cart")
   }

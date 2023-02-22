@@ -4,8 +4,8 @@ const Categories = ({ categoryList }) => {
     return (
         <div className="container-fluid pt-5">
             <div className="row px-xl-5 pb-3">
-                {categoryList?.map((category) => (
-                    <div className="col-lg-4 col-md-6 pb-1">
+                {categoryList?.map((category, index) => (
+                    <div className="col-lg-4 col-md-6 pb-1" key={index}>
                         <div className="cat-item d-flex flex-column border mb-4" style={{ padding: '30px' }}>
                             <p className="text-right">15 Sản phẩm</p>
                             <a href="src/Component/Home/Categories" className="cat-img position-relative overflow-hidden mb-3">

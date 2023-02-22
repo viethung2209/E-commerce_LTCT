@@ -10,11 +10,11 @@ const baseURL_15 = "https://nguyenletuananh.name.vn/laravel/public";
 
 //SP_15
 //Thêm sản phẩm vào giỏ hàng
-export const addCart = async (request) => {
-    return await axios.post(`${baseURL_15}/AddtoCart`, request);
-}
+// export const addCart = async (request) => {
+//     return await axios.post(`${baseURL_15}/AddtoCart`, request);
+// }
 
-export const addCart1 = async (request) => {
+export const addCart = async (request) => {
     return await axios.get(`${baseURL_15}/AddtoCart1`, {
         params: {
             user_id: request.user_id,

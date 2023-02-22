@@ -5,7 +5,6 @@ import { deleteQuantityProductApi, getUserCartInfo, updateQuantityProductApi } f
 import Loading from '../../Loading/Loading';
 
 function Cart(props) {
-
     const currentUser = useSelector(state => state.auth.login.currentUser);
     const dispatch = useDispatch()
 
@@ -93,7 +92,7 @@ function Cart(props) {
                                 </tr>
                             </thead>
                             <tbody className="align-middle">
-                                {cart.map((item) => (
+                                {cart.map((item, index) => (
                                     <tr key={item?.id}>
                                         <td className="align-middle">
                                             <img src={item?.image_url} style={{ width: '50px', marginRight: '20px' }} alt="" />

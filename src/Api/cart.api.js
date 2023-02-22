@@ -9,16 +9,15 @@ const baseURL_15 = "https://nguyenletuananh.name.vn/laravel/public";
 //     return await axios.post(`${baseURL_11}/carts_trans/add-to-cart.php`, request)
 // }
 
-
 //SP_15
 //Thêm sản phẩm vào giỏ hàng
-export const addCart = async (request, productId) => {
-    return await axios.get(`${baseURL_15}/AddtoCart/10`, request);
+export const addCart = async (request) => {
+    return await axios.post(`${baseURL_15}/AddtoCart`, request);
 }
 
 //Lấy thông tin giỏ hàng của người dùng theo user_id
-export const getUserCartInfo = async (request) => {
-    return await axios.get(`${baseURL_15}/Api/Product-Cart`, request);
+export const getUserCartInfo = async (userId) => {
+    return await axios.get(`${baseURL_15}/Api/Product-Cart/${userId}`);
 }
 
 

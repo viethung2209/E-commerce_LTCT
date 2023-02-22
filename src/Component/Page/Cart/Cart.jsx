@@ -14,18 +14,22 @@ function Cart(props) {
 
     if (!currentUser) {
         dispatch(showLogin());
+    } else {
+        console.log("user_id")
+        console.log(currentUser.id)
     }
 
     const fetchCart = async () => {
-        let response = await getUserCartInfo(currentUser.id);
+        let userId = currentUser.id;
+
+        let response = await getUserCartInfo(userId);
         setCart(response.data.data);
         setTotalPrice(response.data.totalPrice);
-        console.log(response.data);
     }
 
     useEffect(() => {
         fetchCart();
-    }, [])
+    }, []);
 
     return (
         <>{currentUser ?
@@ -46,7 +50,7 @@ function Cart(props) {
                                 {cart.map((item, index) => (
                                     <tr key={item?.id}>
                                         <td className="align-middle">
-                                            <img src={item?.image_url} style={{ width: '50px' }} alt="" />
+                                            <img src={item?.image_url} style={{ width: '50px', marginRight: '20px' }} alt="" />
                                             <span className='align-middle'>{item?.name}</span>
                                         </td>
                                         <td className="align-middle">{item?.price}</td>
@@ -100,7 +104,7 @@ function Cart(props) {
                             <div className="card-footer border-secondary bg-transparent">
                                 <div className="d-flex justify-content-between mt-2">
                                     <h5 className="font-weight-bold">Tổng thanh toán</h5>
-                                    <h5 className="font-weight-bold">{(totalPrice + shippingCharge)} VND</h5>
+                                    <h5 className="font-weight-bold">{Number(totalPrice) + Number(shippingCharge)} VND</h5>
                                 </div>
                                 <button className="btn btn-block btn-primary my-3 py-3">
                                     Thanh toán

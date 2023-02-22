@@ -1,35 +1,81 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { showLogin } from '../../../Redux/auth.slice';
-import { getUserCartInfo } from '../../../Api/cart.api';
+import { deleteQuantityProductApi, getUserCartInfo, updateQuantityProductApi } from '../../../Api/cart.api';
+import Loading from '../../Loading/Loading';
 
 function Cart(props) {
 
     const currentUser = useSelector(state => state.auth.login.currentUser);
     const dispatch = useDispatch()
 
+    const [isLoading, setLoading] = useState(false);
     const [cart, setCart] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
     const [shippingCharge, setShippingCharge] = useState(0);
 
+    let foundProduct;
+
     if (!currentUser) {
         dispatch(showLogin());
-    } else {
-        console.log("user_id")
-        console.log(currentUser.id)
     }
 
     const fetchCart = async () => {
         let userId = currentUser.id;
+        getUserCartInfo(userId)
+            .then((response) => {
+                setCart(response.data.data);
+                setTotalPrice(response.data.totalPrice);
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
 
-        let response = await getUserCartInfo(userId);
-        setCart(response.data.data);
-        setTotalPrice(response.data.totalPrice);
+    const updateQuantity = (id, quantity, userId) => {
+        setLoading(true);
+        updateQuantityProductApi(id, quantity, userId)
+            .then(() => {
+                setLoading(false)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
+    const deleteItemInCart = (id, userId) => {
+        setLoading(true);
+        deleteQuantityProductApi(id, userId)
+            .then((res) => {
+                setLoading(false)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
+    const toggleIncreaseItemQuantity = async (id) => {
+        foundProduct = cart.find((item) => item.id === id)
+        const totalQuantities = Number(foundProduct.quanty);
+        updateQuantity(Number(foundProduct.id_product), totalQuantities + 1, currentUser.id);
+    }
+
+    const toggleDecreaseItemQuantity = async (id) => {
+        foundProduct = cart.find((item) => item.id === id)
+        const totalQuantities = Number(foundProduct.quanty);
+        if (totalQuantities > 1) {
+            updateQuantity(Number(foundProduct.id_product), totalQuantities - 1, currentUser.id);
+        }
+    }
+
+    const toggleDeleteItem = (id) => {
+        foundProduct = cart.find((item) => item.id === id)
+        deleteItemInCart(foundProduct.id_product, currentUser.id);
     }
 
     useEffect(() => {
         fetchCart();
-    }, [totalPrice]);
+    }, [totalPrice, isLoading]);
 
     return (
         <>{currentUser ?
@@ -57,13 +103,22 @@ function Cart(props) {
                                         <td className="align-middle">
                                             <div className="input-group quantity mx-auto" style={{ width: '100px' }}>
                                                 <div className="input-group-btn">
-                                                    <button className="btn btn-sm btn-primary btn-minus">
+                                                    <button className="btn btn-sm btn-primary btn-minus"
+                                                        name={item?.id}
+                                                        onClick={() => toggleDecreaseItemQuantity(item?.id)}
+                                                    >
                                                         <i className="fa fa-minus"></i>
                                                     </button>
                                                 </div>
-                                                <input type="text" className="form-control form-control-sm bg-secondary text-center" value={item?.quanty} />
+                                                <input type="text"
+                                                    className="form-control form-control-sm bg-secondary text-center"
+                                                    value={item?.quanty}
+                                                />
                                                 <div className="input-group-btn">
-                                                    <button className="btn btn-sm btn-primary btn-plus">
+                                                    <button className="btn btn-sm btn-primary btn-plus"
+                                                        name={item?.id}
+                                                        onClick={() => toggleIncreaseItemQuantity(item?.id)}
+                                                    >
                                                         <i className="fa fa-plus"></i>
                                                     </button>
                                                 </div>
@@ -71,7 +126,9 @@ function Cart(props) {
                                         </td>
                                         <td className="align-middle">{item?.total_price}</td>
                                         <td className="align-middle">
-                                            <button className="btn btn-sm btn-primary"><i className="fa fa-times"></i></button>
+                                            <button className="btn btn-sm btn-primary"
+                                                onClick={() => toggleDeleteItem(item?.id)}
+                                            ><i className="fa fa-times"></i></button>
                                         </td>
                                     </tr>
                                 ))}
@@ -123,7 +180,9 @@ function Cart(props) {
             >
                 Hãy <b><i><u style={{ color: '#C5837C' }}>đăng nhập</u></i></b> để xem giỏ hàng!
             </div>
-        }</>
+        }
+            <Loading isLoading={isLoading} />
+        </>
     );
 }
 

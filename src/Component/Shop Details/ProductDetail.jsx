@@ -5,6 +5,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addCart1 } from '../../Api/cart.api';
 import { Toaster, toast } from 'react-hot-toast';
 import Loading from '../Loading/Loading';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
+// import '@splidejs/react-splide/css/sea-green';
+// import '@splidejs/react-splide/css/skyblue';
 
 function ProductDetail(props) {
 
@@ -16,17 +20,21 @@ function ProductDetail(props) {
 
     const [size, setSize] = useState('');
     const [color, setColor] = useState('');
-    const [quantity, setQuantity] = useState(1);
+    const [quantity, setQuantity] = useState(0);
     const [productId, setProductId] = useState();
     const [productQuantity, setProductQuantity] = useState();
 
     let subProduct = product?.sub_products;
     let sizes = new Set();
     let colors = new Set();
+    let images = new Set();
 
     subProduct?.forEach(element => {
         sizes.add(element.size);
+        images.add(element.image_url);
     });
+
+    console.log(subProduct)
 
     if (size?.length > 0) {
         subProduct?.forEach(element => {
@@ -35,11 +43,13 @@ function ProductDetail(props) {
     }
 
     function increaseQuantity() {
-        setQuantity(prevQuantity => prevQuantity + 1)
+        if (quantity < productQuantity) {
+            setQuantity(prevQuantity => prevQuantity + 1)
+        }
     }
 
     function decreaseQuantity() {
-        quantity > 1 && setQuantity(prevQuantity => prevQuantity - 1)
+        quantity >= 1 && setQuantity(prevQuantity => prevQuantity - 1)
     }
 
     function addToCart() {
@@ -60,6 +70,7 @@ function ProductDetail(props) {
             })
             .catch(err => {
                 console.log(err)
+                toast.error("Add to cart failed!")
             })
     }
 
@@ -69,8 +80,19 @@ function ProductDetail(props) {
                 setProductId(element.id)
                 setProductQuantity(element.quantity)
             }
+            if (size === "") {
+                setProductId(undefined)
+                setColor("")
+            }
+            if (color === "") {
+                setProductId(undefined)
+            }
         });
     }
+
+    useEffect(() => {
+        setQuantity(0);
+    }, [color])
 
     useEffect(() => {
         color.length > 0 && getProductId(size, color);
@@ -80,8 +102,6 @@ function ProductDetail(props) {
         getProductById(param.id, dispatch)
     }, [param, dispatch]);
 
-    // console.log(subProduct)
-    // console.log({size, color, productId})
 
     return (
         <>
@@ -92,20 +112,25 @@ function ProductDetail(props) {
                             <div className="col-lg-5 pb-5">
                                 <div id="product-carousel" className="carousel slide" data-ride="carousel">
                                     <div className="carousel-inner border">
-                                        {
-                                            product.sub_products.map((item, index) => (
-                                                <div className="carousel-item active" key={index}>
-                                                    <img className="w-100 h-100" src={item.image_url} alt="" />
-                                                </div>
-                                            ))
-                                        }
+                                        <Splide
+                                            options={{ rewind: true, perPage: 1, pagination: false}}
+                                            aria-label="React Splide Example"
+                                        >
+                                            {[...images].map((item, index) => (
+                                                // <div className="carousel-item active" key={index}>
+                                                <SplideSlide>
+                                                    <img className="w-100 h-100" src={item} alt="" />
+                                                </SplideSlide>
+                                                // </div>
+                                            ))}
+                                        </Splide>
                                     </div>
-                                    <a className="carousel-control-prev" href="#product-carousel" data-slide="prev">
+                                    {/* <a className="carousel-control-prev" href="#product-carousel" data-slide="prev">
                                         <i className="fa fa-2x fa-angle-left text-dark"></i>
                                     </a>
                                     <a className="carousel-control-next" href="#product-carousel" data-slide="next">
                                         <i className="fa fa-2x fa-angle-right text-dark"></i>
-                                    </a>
+                                    </a> */}
                                 </div>
                             </div>
 
@@ -173,7 +198,7 @@ function ProductDetail(props) {
                                     </form>
                                 </div>
                                 <div className="d-flex mb-4">
-                                    {productId && <>
+                                    {typeof (productId) === "number" && <>
                                         <p className="text-dark font-weight-medium mb-0 mr-3">Quantities:</p>
                                         <form>
                                             {productQuantity > 0 ?
@@ -181,6 +206,13 @@ function ProductDetail(props) {
                                                 :
                                                 <p>0</p>}
                                         </form>
+                                        {/* <p className="text-dark font-weight-medium mb-0 mr-3">Quantities:</p>
+                                        <form>
+                                            {productQuantity > 0 ?
+                                                <p>{productQuantity}</p>
+                                                :
+                                                <p>0</p>}
+                                        </form> */}
                                     </>}
                                 </div>
                                 <div className="d-flex align-items-center mb-4 pt-2">
@@ -207,6 +239,7 @@ function ProductDetail(props) {
                                     </div>
                                     <button className="btn btn-primary px-3"
                                         onClick={() => addToCart()}
+                                        style={productId ? { pointerEvents: "auto" } : { pointerEvents: "none", opacity: "0.4", background: "#ccc" }}
                                     >
                                         <i className="fa fa-shopping-cart mr-1"></i> Thêm vào giỏ hàng
                                     </button>

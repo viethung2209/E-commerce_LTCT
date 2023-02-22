@@ -2,7 +2,6 @@ import axios from "axios";
 
 const baseURL_11 = "https://sp11-cart.000webhostapp.com/api";
 const baseURL_15 = "https://nguyenletuananh.name.vn/laravel/public";
-
 //SP_11
 // export const addCart = async (request) => {
     
@@ -28,6 +27,14 @@ export const addCart1 = async (request) => {
 //Lấy thông tin giỏ hàng của người dùng theo user_id
 export const getUserCartInfo = async (userId) => {
     return await axios.get(`${baseURL_15}/Api/Product-Cart/${userId}`);
+}
+
+export const updateQuantityProductApi = async (id, quantity, userId) => {
+    return await axios.get(`${baseURL_15}/Save-Item-List-Cart/${id}/${quantity}`, {params: {user_id : userId}})
+}
+
+export const deleteQuantityProductApi = async (id, userId) => {
+    return await axios.get(`${baseURL_15}/Delete-Item-List-Cart/${id}`, {params: {user_id : userId}})
 }
 
 

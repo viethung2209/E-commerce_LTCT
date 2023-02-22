@@ -8,7 +8,9 @@ const Vendor = () => {
                     <div className="owl-carousel vendor-carousel">
                         <Splide options={{
                             perPage: 5,
-                            pagination: false
+                            pagination: true,
+                            type   : 'loop',
+                            rewind: false
                         }}>
                             <SplideSlide>
                                 <div className="vendor-item border p-4">

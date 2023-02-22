@@ -2,15 +2,23 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getProductById } from '../../Api/product.api';
 import { useDispatch, useSelector } from 'react-redux';
+import { addCart1 } from '../../Api/cart.api';
+import { Toaster, toast } from 'react-hot-toast';
+import Loading from '../Loading/Loading';
 
 function ProductDetail(props) {
 
     const param = useParams();
     const dispatch = useDispatch();
     const product = useSelector(state => state.product.product.data)
+    const userId = useSelector(state => state.auth.login.currentUser)?.id;
+    const [isLoading, setLoading] = useState(false)
+
     const [size, setSize] = useState('');
     const [color, setColor] = useState('');
-    const [quantity, setquantity] = useState(1);
+    const [quantity, setQuantity] = useState(1);
+    const [productId, setProductId] = useState();
+    const [productQuantity, setProductQuantity] = useState();
 
     let subProduct = product?.sub_products;
     let sizes = new Set();
@@ -18,23 +26,62 @@ function ProductDetail(props) {
 
     subProduct?.forEach(element => {
         sizes.add(element.size);
-        colors.add(element.color);
     });
 
+    if (size?.length > 0) {
+        subProduct?.forEach(element => {
+            element.size === size && colors.add(element.color);
+        });
+    }
+
     function increaseQuantity() {
-        setquantity(prevQuantity => prevQuantity + 1)
+        setQuantity(prevQuantity => prevQuantity + 1)
     }
 
     function decreaseQuantity() {
-        quantity > 1 && setquantity(prevQuantity => prevQuantity - 1)
+        quantity > 1 && setQuantity(prevQuantity => prevQuantity - 1)
     }
 
-    console.log({size, color, quantity})
+    function addToCart() {
+        setLoading(true);
+        addCart1({
+            user_id: userId,
+            product_id: productId,
+            quantity: quantity
+        })
+            .then(res => {
+                setLoading(false)
+                console.log(res)
+                return res.data.message
+            })
+            .then((status) => {
+                status === "Success" && toast.success("Add to cart successfully!")
+                status === "Error" && toast.error("Add to cart failed!")
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
 
+    function getProductId(size, color) {
+        subProduct?.forEach(element => {
+            if (element.size === size && element.color === color) {
+                setProductId(element.id)
+                setProductQuantity(element.quantity)
+            }
+        });
+    }
+
+    useEffect(() => {
+        color.length > 0 && getProductId(size, color);
+    }, [color, size])
 
     useEffect(() => {
         getProductById(param.id, dispatch)
     }, [param, dispatch]);
+
+    // console.log(subProduct)
+    // console.log({size, color, productId})
 
     return (
         <>
@@ -78,9 +125,23 @@ function ProductDetail(props) {
                                 <p className="mb-4 product-description">
                                     {product.description}
                                 </p>
-                                <div className="d-flex mb-3">
+                                <div className="d-flex mb-3 sizes-select-wrapper">
                                     <p className="text-dark font-weight-medium mb-0 mr-3">Sizes:</p>
-                                    <form>
+                                    <form action="">
+                                        <select name="" id=""
+                                            className='sizes-select'
+                                            onChange={(e) => setSize(e.target.value)}
+                                        >
+                                            <option value="">--Choice size--</option>
+                                            {[...sizes].map((item, index) => (
+                                                <option
+                                                    value={item}
+                                                    key={index}
+                                                >{item}</option>
+                                            ))}
+                                        </select>
+                                    </form>
+                                    {/* <form>
                                         {[...sizes].map((item, index) => (
                                             <div className="custom-control custom-radio custom-control-inline" key={index}>
                                                 <input type="radio"
@@ -92,11 +153,12 @@ function ProductDetail(props) {
                                                 <label className="custom-control-label" htmlFor={item}>{item}</label>
                                             </div>
                                         ))}
-                                    </form>
+                                    </form> */}
                                 </div>
                                 <div className="d-flex mb-4">
                                     <p className="text-dark font-weight-medium mb-0 mr-3">Colors:</p>
                                     <form>
+                                        {[...colors].length < 1 && <p style={{ marginBottom: "0" }}>Please choice a size before choice color!</p>}
                                         {[...colors].map((item, index) => (
                                             <div className="custom-control custom-radio custom-control-inline" key={index}>
                                                 <input type="radio"
@@ -110,6 +172,17 @@ function ProductDetail(props) {
                                         ))}
                                     </form>
                                 </div>
+                                <div className="d-flex mb-4">
+                                    {productId && <>
+                                        <p className="text-dark font-weight-medium mb-0 mr-3">Quantities:</p>
+                                        <form>
+                                            {productQuantity > 0 ?
+                                                <p>{productQuantity}</p>
+                                                :
+                                                <p>0</p>}
+                                        </form>
+                                    </>}
+                                </div>
                                 <div className="d-flex align-items-center mb-4 pt-2">
                                     <div className="input-group quantity mr-3" style={{ width: '130px' }}>
                                         <div className="input-group-btn">
@@ -122,7 +195,7 @@ function ProductDetail(props) {
                                         <input type="text"
                                             className="form-control bg-secondary text-center"
                                             value={quantity}
-                                            onChange={e => setquantity(e.target.value)}
+                                            onChange={e => setQuantity(e.target.value)}
                                         />
                                         <div className="input-group-btn">
                                             <button className="btn btn-primary btn-plus"
@@ -132,7 +205,9 @@ function ProductDetail(props) {
                                             </button>
                                         </div>
                                     </div>
-                                    <button className="btn btn-primary px-3">
+                                    <button className="btn btn-primary px-3"
+                                        onClick={() => addToCart()}
+                                    >
                                         <i className="fa fa-shopping-cart mr-1"></i> Thêm vào giỏ hàng
                                     </button>
                                 </div>
@@ -380,6 +455,10 @@ function ProductDetail(props) {
                     </div>
                 </div>
             )}
+            <Loading isLoading={isLoading} />
+            <Toaster
+                position='top center'
+            />
         </>
     );
 }

@@ -29,7 +29,7 @@ function Cart(props) {
 
     useEffect(() => {
         fetchCart();
-    }, []);
+    }, [totalPrice]);
 
     return (
         <>{currentUser ?

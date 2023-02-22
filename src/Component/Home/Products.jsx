@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { addCart } from '../../Api/cart.api';
+import { addCart, addCart1 } from '../../Api/cart.api';
 import { showLogin } from '../../Redux/auth.slice';
 
 const Products = ({ productList }) => {
@@ -20,7 +20,7 @@ const Products = ({ productList }) => {
       product_id: 10,
       quantity: (quantity ? quantity : 1)
     }
-    await addCart(JSON.stringify(request));
+    await addCart1(request);
     console.log(productId)
     console.log("REQ");
     console.log(request)
@@ -34,7 +34,9 @@ const Products = ({ productList }) => {
         <h2 className="section-title px-5"><span className="px-2">SẢN PHẨM NỔI BẬT</span></h2>
       </div>
       <div className="row px-xl-5 pb-3">
-        {productList.map((product, index) => (
+        {productList.map((product, index) => {
+          if(product.quantity !== null)
+          return (
           <div className="col-lg-3 col-md-6 col-sm-12 pb-1" key={index}>
             <div className="card product-item border-0 mb-4">
               <div
@@ -44,7 +46,7 @@ const Products = ({ productList }) => {
               <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
                 <h6 className="text-truncate mb-3">{product.name}</h6>
                 <div className="d-flex justify-content-center">
-                  <h6>{product.cost} VND</h6>
+                  <h6>{product.sale_price} VND</h6>
                   <h6 className="text-muted ml-2">
                     {/* <del>$123.00</del> */}
                   </h6>
@@ -58,7 +60,8 @@ const Products = ({ productList }) => {
               </div>
             </div>
           </div>
-        ))}
+        )
+})}
       </div>
     </div>
   )

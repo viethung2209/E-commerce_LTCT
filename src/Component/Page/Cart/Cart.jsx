@@ -12,6 +12,8 @@ function Cart(props) {
     const [totalPrice, setTotalPrice] = useState(0);
     const [shippingCharge, setShippingCharge] = useState(0);
 
+    const [quantity, setQuantity] = useState(1);
+
     if (!currentUser) {
         dispatch(showLogin());
     } else {
@@ -25,6 +27,14 @@ function Cart(props) {
         let response = await getUserCartInfo(userId);
         setCart(response.data.data);
         setTotalPrice(response.data.totalPrice);
+    }
+
+    function increaseQuantity() {
+        setQuantity(prevQuantity => prevQuantity + 1)
+    }
+
+    function decreaseQuantity() {
+        quantity > 1 && setQuantity(prevQuantity => prevQuantity - 1)
     }
 
     useEffect(() => {
@@ -43,7 +53,7 @@ function Cart(props) {
                                     <th>Giá</th>
                                     <th>Số lượng</th>
                                     <th>Tổng cộng</th>
-                                    <th>Xóa</th>
+                                    <th>Xóa </th>
                                 </tr>
                             </thead>
                             <tbody className="align-middle">
@@ -57,13 +67,22 @@ function Cart(props) {
                                         <td className="align-middle">
                                             <div className="input-group quantity mx-auto" style={{ width: '100px' }}>
                                                 <div className="input-group-btn">
-                                                    <button className="btn btn-sm btn-primary btn-minus">
+                                                    <button className="btn btn-sm btn-primary btn-minus"
+                                                        onClick={decreaseQuantity}
+                                                    >
                                                         <i className="fa fa-minus"></i>
                                                     </button>
                                                 </div>
-                                                <input type="text" className="form-control form-control-sm bg-secondary text-center" value={item?.quanty} />
+                                                <input 
+                                                    type="text" 
+                                                    className="form-control form-control-sm bg-secondary text-center" 
+                                                    value={item?.quanty} 
+                                                    onChange={(e) => setQuantity(e.target.value)}
+                                                />
                                                 <div className="input-group-btn">
-                                                    <button className="btn btn-sm btn-primary btn-plus">
+                                                    <button className="btn btn-sm btn-primary btn-plus"
+                                                        onClick={increaseQuantity}
+                                                    >
                                                         <i className="fa fa-plus"></i>
                                                     </button>
                                                 </div>

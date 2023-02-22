@@ -17,7 +17,7 @@ const Products = ({ productList }) => {
     console.log(quantity)
     let request = {
       user_id: currentUser.id,
-      product_id: 10,
+      product_id: productId,
       quantity: (quantity ? quantity : 1)
     }
     await addCart1(request);

@@ -6,7 +6,7 @@ function Contact(props) {
 
     const currentUser = useSelector(state => state.auth.login.currentUser);
     const dispatch = useDispatch()
-
+    const url = `chat-real-time.up.railway.app/client/${currentUser.id}`;
     if(!currentUser) {
         dispatch(showLogin());
     }
@@ -14,7 +14,7 @@ function Contact(props) {
     return (
         <>{currentUser ?
             <div>
-                <iframe src="https://chat-real-time-production-1e8e.up.railway.app/ " class="chatbox" scrolling="no"></iframe>
+                <iframe src= {`https://chat-real-time.up.railway.app/client/${currentUser.id}`} class="chatbox" scrolling="no"></iframe>
             </div>
             :
             <div style={{

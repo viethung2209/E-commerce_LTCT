@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logOutUser } from '../../Api/auth.api';
 import logo from '../../img/user-128.png';
+import {HiOutlineTicket} from "react-icons/hi";
 
 
 const DropdownNavbar = ({ height, closeDropdown }) => {
@@ -18,6 +19,10 @@ const DropdownNavbar = ({ height, closeDropdown }) => {
 
     const closeDropdownNavbar = () => {
         closeDropdown(0);
+    }
+
+    const openlink = () => {
+        window.open(`https://team12-ads-app.fly.dev/users/voucherList.all/${currentUser.id}`);
     }
 
     return (
@@ -48,6 +53,17 @@ const DropdownNavbar = ({ height, closeDropdown }) => {
                 >
                     <HiUser className='sub-menu-link-before' />
                     <p>Hồ sơ của bạn</p>
+                    <GrFormNext className='sub-menu-link-after' />
+                </div>
+
+                <div className='sub-menu-link'
+                    onClick={() => {
+                        // navigate('/profile')
+                        openlink();
+                    }}
+                >
+                    <HiOutlineTicket className='sub-menu-link-before' />
+                    <p>Voucher của tôi</p>
                     <GrFormNext className='sub-menu-link-after' />
                 </div>
 

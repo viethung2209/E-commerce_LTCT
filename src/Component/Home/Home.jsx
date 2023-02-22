@@ -21,6 +21,7 @@ function Home(props) {
     getListProduct()
       .then(res => {
         setProductList(res.data.data);
+        console.log(res.data.data[0].sub_products[0].image_url);
       })
       .catch(err => {
         console.log(err);

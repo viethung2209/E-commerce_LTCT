@@ -17,6 +17,9 @@ function Cart(props) {
 
     if (!currentUser) {
         dispatch(showLogin());
+    } else {
+        console.log('ENV');
+        console.log(process.env.REACT_APP_CART_MODULE);
     }
 
     const fetchCart = async () => {

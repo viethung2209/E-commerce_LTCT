@@ -16,11 +16,11 @@ const Products = ({ productList }) => {
     console.log(productId)
     let request = {
       user_id: currentUser.id,
-      product_id: productId,
-      quantity: 1,
+      // product_id: productId,
+      // quantity: 1,
     }
-    await addCart(JSON.stringify(request));
-    console.log("Data returned")
+    await addCart(JSON.stringify(request), productId);
+    console.log(currentUser.id)
     console.log("Add to Cart")
   }
 

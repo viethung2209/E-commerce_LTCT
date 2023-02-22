@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getProductById } from '../../Api/product.api';
 import { useDispatch, useSelector } from 'react-redux';
-import { addCart1 } from '../../Api/cart.api';
+import { addCart } from '../../Api/cart.api';
 import { Toaster, toast } from 'react-hot-toast';
 import Loading from '../Loading/Loading';
 
@@ -44,7 +44,7 @@ function ProductDetail(props) {
 
     function addToCart() {
         setLoading(true);
-        addCart1({
+        addCart({
             user_id: userId,
             product_id: productId,
             quantity: quantity
@@ -55,8 +55,8 @@ function ProductDetail(props) {
                 return res.data.message
             })
             .then((status) => {
-                status === "Success" && toast.success("Add to cart successfully!")
-                status === "Error" && toast.error("Add to cart failed!")
+                status === "Success" && toast.success("Thêm vào giỏ hàng thành công!")
+                status === "Error" && toast.error("Mẫu này đã hết hàng!")
             })
             .catch(err => {
                 console.log(err)

@@ -53,11 +53,11 @@ function Cart(props) {
                                     <th>Giá</th>
                                     <th>Số lượng</th>
                                     <th>Tổng cộng</th>
-                                    <th>Xóa </th>
+                                    <th>Xóa</th>
                                 </tr>
                             </thead>
                             <tbody className="align-middle">
-                                {cart.map((item) => (
+                                {cart.map((item, index) => (
                                     <tr key={item?.id}>
                                         <td className="align-middle">
                                             <img src={item?.image_url} style={{ width: '50px', marginRight: '20px' }} alt="" />
@@ -75,7 +75,8 @@ function Cart(props) {
                                                 </div>
                                                 <input 
                                                     type="text" 
-                                                    className="form-control form-control-sm bg-secondary text-center" 
+                                                    className="form-control form-control-sm bg-secondary text-center"
+                                                    name={item?.id} 
                                                     value={item?.quanty} 
                                                     onChange={(e) => setQuantity(e.target.value)}
                                                 />

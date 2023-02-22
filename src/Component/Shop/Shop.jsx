@@ -221,22 +221,31 @@ function Shop(props) {
                                 <div className="card product-item border-0 mb-4">
                                     <div
                                         className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                        <img className="img-fluid w-100" src={product.sub_products.length !== 0? product.sub_products[0].image_url : null} alt="Anh san pham" />
+                                        <img 
+                                            className="img-fluid-product w-100" 
+                                            src={product.sub_products.length !== 0? product.sub_products[0].image_url : null} 
+                                            alt="Anh san pham" 
+                                            style={{ objectFit: 'fill' }}
+                                        />
                                     </div>
                                     <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
                                         <h6 className="text-truncate mb-3">{product.name}</h6>
                                         <div className="d-flex justify-content-center">
-                                            <h6>$123.00</h6>
+                                            <h6 style={{ color: '#e43a36' }}>
+                                                {Math.floor(Number(product.sale_price) *  (100 - Number(product.sale_off))/100)} VND
+                                            </h6>
                                             <h6 className="text-muted ml-2">
-                                                <del>$123.00</del>
+                                                <del style={{ fontSize: '13px' }}>{product.sale_price} VND</del>
                                             </h6>
                                         </div>
                                     </div>
                                     <div className="card-footer d-flex justify-content-between bg-light border">
-                                        <Link to={`/product-detail/${product.id}`}className="btn btn-sm text-dark p-0"><i
-                                            className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</Link>
-                                        <Link to="/pages/shopping-card" onClick={() => addToCart(product.id)} className="btn btn-sm text-dark p-0"><i
-                                            className="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ hàng</Link>
+                                        <Link 
+                                            to={`/product-detail/${product.id}`}
+                                            className="btn btn-sm text-dark p-0"
+                                            style={{width: '100%', textAlign: 'center'}}
+                                        >
+                                            <i className="fas fa-eye text-primary mr-1"></i>Xem chi tiết</Link>
                                     </div>
                                 </div>
                             </div>

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const baseURL_11 = "https://sp11-cart.000webhostapp.com/api";
-const baseURL_15 = "https://nguyenletuananh.name.vn/laravel/public/Api";
+const baseURL_15 = "https://nguyenletuananh.name.vn/laravel/public";
 
 //SP_11
 // export const addCart = async (request) => {

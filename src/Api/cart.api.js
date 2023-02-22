@@ -15,6 +15,16 @@ export const addCart = async (request) => {
     return await axios.post(`${baseURL_15}/AddtoCart`, request);
 }
 
+export const addCart1 = async (request) => {
+    return await axios.get(`${baseURL_15}/AddtoCart1`, {
+        params: {
+            user_id: request.user_id,
+            product_id: request.product_id,
+            quantity: request.quantity
+        }
+    });
+}
+
 //Lấy thông tin giỏ hàng của người dùng theo user_id
 export const getUserCartInfo = async (userId) => {
     return await axios.get(`${baseURL_15}/Api/Product-Cart/${userId}`);

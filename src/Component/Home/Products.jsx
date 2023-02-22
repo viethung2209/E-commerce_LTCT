@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { addCart } from '../../Api/cart.api';
+import { addCart, addCart1 } from '../../Api/cart.api';
 import { showLogin } from '../../Redux/auth.slice';
 
 const Products = ({ productList }) => {
@@ -20,7 +20,7 @@ const Products = ({ productList }) => {
       product_id: 10,
       quantity: (quantity ? quantity : 1)
     }
-    await addCart(JSON.stringify(request));
+    await addCart1(request);
     console.log(productId)
     console.log("REQ");
     console.log(request)

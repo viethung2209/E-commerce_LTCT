@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getProductById } from '../../Api/product.api';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,6 +8,29 @@ function ProductDetail(props) {
     const param = useParams();
     const dispatch = useDispatch();
     const product = useSelector(state => state.product.product.data)
+    const [size, setSize] = useState('');
+    const [color, setColor] = useState('');
+    const [quantity, setquantity] = useState(1);
+
+    let subProduct = product?.sub_products;
+    let sizes = new Set();
+    let colors = new Set();
+
+    subProduct?.forEach(element => {
+        sizes.add(element.size);
+        colors.add(element.color);
+    });
+
+    function increaseQuantity() {
+        setquantity(prevQuantity => prevQuantity + 1)
+    }
+
+    function decreaseQuantity() {
+        quantity > 1 && setquantity(prevQuantity => prevQuantity - 1)
+    }
+
+    console.log({size, color, quantity})
+
 
     useEffect(() => {
         getProductById(param.id, dispatch)
@@ -16,15 +39,15 @@ function ProductDetail(props) {
     return (
         <>
             {product && (
-                <p>
+                <div>
                     <div className="container-fluid py-5">
                         <div className="row px-xl-5">
                             <div className="col-lg-5 pb-5">
                                 <div id="product-carousel" className="carousel slide" data-ride="carousel">
                                     <div className="carousel-inner border">
                                         {
-                                            product.sub_products.map((item) => (
-                                                <div className="carousel-item active">
+                                            product.sub_products.map((item, index) => (
+                                                <div className="carousel-item active" key={index}>
                                                     <img className="w-100 h-100" src={item.image_url} alt="" />
                                                 </div>
                                             ))
@@ -40,7 +63,7 @@ function ProductDetail(props) {
                             </div>
 
                             <div className="col-lg-7 pb-5">
-                                <h3 className="font-weight-semi-bold">{product.name}</h3>
+                                <i className="font-weight-semi-bold">{product.name}</i>
                                 <div className="d-flex mb-3">
                                     <div className="text-primary mr-2">
                                         <small className="fas fa-star"></small>
@@ -51,17 +74,22 @@ function ProductDetail(props) {
                                     </div>
                                     <small className="pt-1">(50 Reviews)</small>
                                 </div>
-                                <h3 className="font-weight-semi-bold mb-4">{product.cost} VND</h3>
-                                <p className="mb-4">
+                                <p className="font-weight-semi-bold mb-4">{product.cost} VND</p>
+                                <p className="mb-4 product-description">
                                     {product.description}
                                 </p>
                                 <div className="d-flex mb-3">
                                     <p className="text-dark font-weight-medium mb-0 mr-3">Sizes:</p>
                                     <form>
-                                        {product.sub_products.map(item => (
-                                            <div className="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" className="custom-control-input" id="size-1" name="size" />
-                                                <label className="custom-control-label" htmlFor="size-1">{item.size}</label>
+                                        {[...sizes].map((item, index) => (
+                                            <div className="custom-control custom-radio custom-control-inline" key={index}>
+                                                <input type="radio"
+                                                    className="custom-control-input"
+                                                    id={item} name="size"
+                                                    value={item}
+                                                    onChange={(e) => setSize(e.target.value)}
+                                                />
+                                                <label className="custom-control-label" htmlFor={item}>{item}</label>
                                             </div>
                                         ))}
                                     </form>
@@ -69,10 +97,15 @@ function ProductDetail(props) {
                                 <div className="d-flex mb-4">
                                     <p className="text-dark font-weight-medium mb-0 mr-3">Colors:</p>
                                     <form>
-                                        {product.sub_products.map(item => (
-                                            <div className="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" className="custom-control-input" id="color" name="color" />
-                                                <label className="custom-control-label" htmlFor="color">{item.color}</label>
+                                        {[...colors].map((item, index) => (
+                                            <div className="custom-control custom-radio custom-control-inline" key={index}>
+                                                <input type="radio"
+                                                    className="custom-control-input"
+                                                    id={item} name="color"
+                                                    value={item}
+                                                    onChange={(e) => setColor(e.target.value)}
+                                                />
+                                                <label className="custom-control-label" htmlFor={item}>{item}</label>
                                             </div>
                                         ))}
                                     </form>
@@ -80,13 +113,21 @@ function ProductDetail(props) {
                                 <div className="d-flex align-items-center mb-4 pt-2">
                                     <div className="input-group quantity mr-3" style={{ width: '130px' }}>
                                         <div className="input-group-btn">
-                                            <button className="btn btn-primary btn-minus">
+                                            <button className="btn btn-primary btn-minus"
+                                                onClick={decreaseQuantity}
+                                            >
                                                 <i className="fa fa-minus"></i>
                                             </button>
                                         </div>
-                                        <input type="text" className="form-control bg-secondary text-center" value="1" />
+                                        <input type="text"
+                                            className="form-control bg-secondary text-center"
+                                            value={quantity}
+                                            onChange={e => setquantity(e.target.value)}
+                                        />
                                         <div className="input-group-btn">
-                                            <button className="btn btn-primary btn-plus">
+                                            <button className="btn btn-primary btn-plus"
+                                                onClick={increaseQuantity}
+                                            >
                                                 <i className="fa fa-plus"></i>
                                             </button>
                                         </div>
@@ -337,7 +378,7 @@ function ProductDetail(props) {
                             </div>
                         </div> */}
                     </div>
-                </p>
+                </div>
             )}
         </>
     );

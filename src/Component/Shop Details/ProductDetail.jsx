@@ -7,6 +7,7 @@ import { Toaster, toast } from 'react-hot-toast';
 import Loading from '../Loading/Loading';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+import { showLogin } from '../../Redux/auth.slice';
 // import '@splidejs/react-splide/css/sea-green';
 // import '@splidejs/react-splide/css/skyblue';
 
@@ -15,6 +16,7 @@ function ProductDetail(props) {
     const param = useParams();
     const dispatch = useDispatch();
     const product = useSelector(state => state.product.product.data)
+    const currentUser = useSelector(state => state.auth.login.currentUser)
     const userId = useSelector(state => state.auth.login.currentUser)?.id;
     const [isLoading, setLoading] = useState(false)
 
@@ -53,25 +55,29 @@ function ProductDetail(props) {
     }
 
     function addToCart() {
-        setLoading(true);
-        addCart({
-            user_id: userId,
-            product_id: productId,
-            quantity: quantity
-        })
-            .then(res => {
-                setLoading(false)
-                console.log(res)
-                return res.data.message
+        if (!currentUser) {
+            dispatch(showLogin());
+        } else {
+            setLoading(true);
+            addCart({
+                user_id: userId,
+                product_id: productId,
+                quantity: quantity
             })
-            .then((status) => {
-                status === "Success" && toast.success("Thêm vào giỏ hàng thành công!")
-                status === "Error" && toast.error("Mẫu này đã hết hàng!")
-            })
-            .catch(err => {
-                console.log(err)
-                toast.error("Add to cart failed!")
-            })
+                .then(res => {
+                    setLoading(false)
+                    console.log(res)
+                    return res.data.message
+                })
+                .then((status) => {
+                    status === "Success" && toast.success("Thêm vào giỏ hàng thành công!")
+                    status === "Error" && toast.error("Mẫu này đã hết hàng!")
+                })
+                .catch(err => {
+                    console.log(err)
+                    toast.error("Add to cart failed!")
+                })
+        }
     }
 
     function getProductId(size, color) {
@@ -113,7 +119,7 @@ function ProductDetail(props) {
                                 <div id="product-carousel" className="carousel slide" data-ride="carousel">
                                     <div className="carousel-inner border">
                                         <Splide
-                                            options={{ rewind: true, perPage: 1, pagination: false}}
+                                            options={{ rewind: true, perPage: 1, pagination: false }}
                                             aria-label="React Splide Example"
                                         >
                                             {[...images].map((item, index) => (
@@ -249,7 +255,7 @@ function ProductDetail(props) {
                                     </div>
                                     <button className="btn btn-primary px-3"
                                         onClick={() => addToCart()}
-                                        style={productId ? { pointerEvents: "auto" } : { pointerEvents: "none", opacity: "0.4", background: "#ccc" }}
+                                        style={(productId && quantity > 0) ? { pointerEvents: "auto" } : { pointerEvents: "none", opacity: "0.4", background: "#ccc" }}
                                     >
                                         <i className="fa fa-shopping-cart mr-1"></i> Thêm vào giỏ hàng
                                     </button>

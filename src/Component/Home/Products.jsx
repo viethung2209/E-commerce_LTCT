@@ -20,6 +20,7 @@ const Products = ({ productList }) => {
       // quantity: 1,
     }
     await addCart(JSON.stringify(request), productId);
+    console.log(productId)
     console.log(currentUser.id)
     console.log("Add to Cart")
   }

@@ -4,7 +4,6 @@ import { showLogin } from '../../../Redux/auth.slice';
 import { getUserCartInfo } from '../../../Api/cart.api';
 
 function Cart(props) {
-
     const currentUser = useSelector(state => state.auth.login.currentUser);
     const dispatch = useDispatch()
 

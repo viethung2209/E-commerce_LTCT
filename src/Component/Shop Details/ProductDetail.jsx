@@ -112,27 +112,37 @@ function ProductDetail(props) {
                             <div className="col-lg-7 pb-5">
                                 <i className="font-weight-semi-bold">{product.name}</i>
                                 <div className="d-flex mb-3">
-                                    <div className="text-primary mr-2">
+                                    {/* <div className="text-primary mr-2">
                                         <small className="fas fa-star"></small>
                                         <small className="fas fa-star"></small>
                                         <small className="fas fa-star"></small>
                                         <small className="fas fa-star-half-alt"></small>
                                         <small className="far fa-star"></small>
                                     </div>
-                                    <small className="pt-1">(50 Reviews)</small>
+                                    <small className="pt-1">(50 Reviews)</small> */}
                                 </div>
-                                <p className="font-weight-semi-bold mb-4">{product.cost} VND</p>
+                                <p className="font-weight-semi-bold mb-4">
+                                    <span style={{ color: '#e43a36' }}>
+                                        {Math.floor(Number(product.sale_price) * (100 - Number(product.sale_off)) / 100)} VND
+                                    </span>
+                                    <del
+                                        className="text-muted ml-2"
+                                        style={{ fontSize: '20px', marginLeft: '18px' }}
+                                    >
+                                        {product.sale_price} VND
+                                    </del>
+                                </p>
                                 <p className="mb-4 product-description">
                                     {product.description}
                                 </p>
                                 <div className="d-flex mb-3 sizes-select-wrapper">
-                                    <p className="text-dark font-weight-medium mb-0 mr-3">Sizes:</p>
+                                    <p className="text-dark font-weight-medium mb-0 mr-3">Size:</p>
                                     <form action="">
                                         <select name="" id=""
                                             className='sizes-select'
                                             onChange={(e) => setSize(e.target.value)}
                                         >
-                                            <option value="">--Choice size--</option>
+                                            <option value="">--Chọn kích cỡ--</option>
                                             {[...sizes].map((item, index) => (
                                                 <option
                                                     value={item}
@@ -156,9 +166,9 @@ function ProductDetail(props) {
                                     </form> */}
                                 </div>
                                 <div className="d-flex mb-4">
-                                    <p className="text-dark font-weight-medium mb-0 mr-3">Colors:</p>
+                                    <p className="text-dark font-weight-medium mb-0 mr-3">Màu:</p>
                                     <form>
-                                        {[...colors].length < 1 && <p style={{ marginBottom: "0" }}>Please choice a size before choice color!</p>}
+                                        {[...colors].length < 1 && <p style={{ marginBottom: "0" }}>Quý khách vui lòng chọn size của sản phẩm trước!</p>}
                                         {[...colors].map((item, index) => (
                                             <div className="custom-control custom-radio custom-control-inline" key={index}>
                                                 <input type="radio"
@@ -214,16 +224,16 @@ function ProductDetail(props) {
                                 <div className="d-flex pt-2">
                                     <p className="text-dark font-weight-medium mb-0 mr-2">Chia sẻ:</p>
                                     <div className="d-inline-flex">
-                                        <a className="text-dark px-2" href="/#">
+                                        <a className="text-dark px-2">
                                             <i className="fab fa-facebook-f"></i>
                                         </a>
-                                        <a className="text-dark px-2" href="/#">
+                                        <a className="text-dark px-2">
                                             <i className="fab fa-twitter"></i>
                                         </a>
-                                        <a className="text-dark px-2" href="/#">
+                                        <a className="text-dark px-2">
                                             <i className="fab fa-linkedin-in"></i>
                                         </a>
-                                        <a className="text-dark px-2" href="/#">
+                                        <a className="text-dark px-2">
                                             <i className="fab fa-pinterest"></i>
                                         </a>
                                     </div>

@@ -9650,7 +9650,9 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .font-weight-semi-bold {
-    font-weight: 600
+    font-size: 30px;
+    font-weight: 600;
+    color:#000;
 }
 
 [class^=flaticon-]:before, [class*=" flaticon-"]:before, [class^=flaticon-]:after, [class*=" flaticon-"]:after {

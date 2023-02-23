@@ -83,12 +83,12 @@ function Cart(props) {
     return (
         <>{currentUser ? (
             <div className="card-container">
-                <iframe className='card-frame'
+                {/* <iframe className='card-frame'
                     src={`https://hssh18121.github.io/Cart-frontend/${currentUser?.id}`} 
                     frameborder="0"
                     title='card'
-                ></iframe>
-                {/* <div className="row px-xl-5">
+                ></iframe> */}
+                <div className="row px-xl-5">
                     <div className="col-lg-8 table-responsive mb-5">
                         <table className="table table-bordered text-center mb-0">
                             <thead className="bg-secondary text-dark">
@@ -177,7 +177,7 @@ function Cart(props) {
                             </div>
                         </div>
                     </div>
-                </div> */}
+                </div>
             </div>
 
         ):

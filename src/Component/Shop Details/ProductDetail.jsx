@@ -87,7 +87,7 @@ function ProductDetail(props) {
                 .then(res => {
                     setLoading(false)
                     console.log(res)
-                    return res.data.message[1]
+                    return res.data
                 })
                 .then((status) => {
                     toast.success("Thêm vào giỏ hàng thành công!")

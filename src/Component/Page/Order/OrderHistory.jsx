@@ -16,7 +16,7 @@ function OrderHistory(props) {
             currentUser ?
             <div className="card-container">
                 <iframe className='card-frame'
-                src={`http://103.179.173.95:8081/listOrderByUser/${currentUser?.id}`} 
+                src={`https://tungsnk.tech:8888/listOrderByUser`} 
                 frameborder="0"
                 title='card'
                 ></iframe>

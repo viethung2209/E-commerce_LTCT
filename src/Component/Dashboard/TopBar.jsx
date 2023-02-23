@@ -53,7 +53,7 @@ const TopBar = () => {
                             </div>
                         </form> */}
                     </div>
-                    <div className="col-lg-3 col-6 text-right">
+                    {/* <div className="col-lg-3 col-6 text-right">
                         <Link className="btn border">
                             <i className="fas fa-heart text-primary"></i>
                             <span className="badge">0</span>
@@ -63,7 +63,7 @@ const TopBar = () => {
                             <i className="fas fa-shopping-cart text-primary"></i>
                             <span className="badge">0</span>
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { showLogin } from '../../../Redux/auth.slice';
 import { deleteQuantityProductApi, getUserCartInfo, updateQuantityProductApi } from '../../../Api/cart.api';
 import Loading from '../../Loading/Loading';
+import { NavLink, Link } from "react-router-dom";
 
 function Cart(props) {
     const currentUser = useSelector(state => state.auth.login.currentUser);
@@ -80,8 +81,13 @@ function Cart(props) {
     }, [totalPrice, isLoading]);
 
     return (
-        <>{currentUser ?
+        <>{currentUser ? (
             <div className="card-container">
+                {/* <iframe className='card-frame'
+                    src={`https://hssh18121.github.io/Cart-frontend/${currentUser?.id}`} 
+                    frameborder="0"
+                    title='card'
+                ></iframe> */}
                 <div className="row px-xl-5">
                     <div className="col-lg-8 table-responsive mb-5">
                         <table className="table table-bordered text-center mb-0">
@@ -165,16 +171,16 @@ function Cart(props) {
                                     <h5 className="font-weight-bold">Tổng thanh toán</h5>
                                     <h5 className="font-weight-bold">{Number(totalPrice) + Number(shippingCharge)} VND</h5>
                                 </div>
-                                <button className="btn btn-block btn-primary my-3 py-3">
-                                    Thanh toán
-                                </button>
+                                <Link to="/pages/checkout" className="btn btn-block btn-primary my-3 py-3" >
+                                    Tạo đơn hàng
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            :
+        ):
             <div style={{
                 width: "100%", textAlign: "center", cursor: "pointer"
             }}

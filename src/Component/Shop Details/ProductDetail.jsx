@@ -57,7 +57,7 @@ function ProductDetail(props) {
     function addToCart() {
         if (!currentUser) {
             dispatch(showLogin());
-        } else {
+        } else if (process.env.REACT_APP_CART_MODULE === "15") {
             setLoading(true);
             addCart({
                 user_id: userId,
@@ -75,7 +75,26 @@ function ProductDetail(props) {
                 })
                 .catch(err => {
                     console.log(err)
-                    toast.error("Add to cart failed!")
+                    toast.error("Có lỗi xảy ra khi thêm sản phẩm vào giỏ hàng!")
+                })
+        } else if (process.env.REACT_APP_CART_MODULE === "11") {
+            setLoading(true);
+            addCart({
+                user_id: userId,
+                product_id: productId,
+                quantity: quantity
+            })
+                .then(res => {
+                    setLoading(false)
+                    console.log(res)
+                    return res.data.message[1]
+                })
+                .then((status) => {
+                    toast.success("Thêm vào giỏ hàng thành công!")
+                })
+                .catch(err => {
+                    console.log(err)
+                    toast.error("Có lỗi xảy ra khi thêm sản phẩm vào giỏ hàng!")
                 })
         }
     }

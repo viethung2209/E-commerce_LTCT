@@ -14,29 +14,6 @@ function Shop(props) {
     const currentUser = useSelector(state => state.auth.login.currentUser);
     const dispatch = useDispatch();
 
-    async function addToCart(productId) {
-        if (!currentUser) {
-            dispatch(showLogin());
-        }
-
-        console.log(productId)
-        let request = {
-            user_id: currentUser.id,
-            product_id: productId,
-            quantity: 1,
-        }   
-        await addCart(JSON.stringify(request));
-        console.log("Data returned")
-        console.log("Add to Cart")
-    }
-
-    
-
-    if (currentUser) {
-        console.log("id")
-        console.log(currentUser.id)
-    }
-
     const listProduct = () => {
         getListProduct()
             .then(res => {
